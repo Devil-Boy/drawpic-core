@@ -60,5 +60,17 @@ public class TestLobby {
 		assertTrue(lob.removePlayer("Frank"));
 		assertFalse(lob.removePlayer("Frank")); //Test for removing a player twice
 	}
+	
+	@Test
+	public void testGetHost(){
+		DrawLobby lob = new DrawLobby("Bob");
+		assertEquals("Bob",lob.getHost()); //Initial check
+		lob.addPlayer("Frank");
+		assertEquals("Bob",lob.getHost()); //checking after adding 1 player
+		lob.addPlayer("Sinatra");
+		assertEquals("Bob",lob.getHost());
+		lob.addPlayer("Bert");
+		assertEquals("Bob",lob.getHost());
+	}
 		
 }
