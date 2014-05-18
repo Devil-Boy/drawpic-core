@@ -65,6 +65,15 @@ public class DrawLobby implements Lobby {
 	}
 	
 	/**
+	 * Gets the host of this lobby
+	 * @return The first player of the lobby
+	 */
+	@Override
+	public String getHost() {
+		return players.get(0);
+	}
+	
+	/**
 	 * Gets the players in this lobby
 	 * @return A 4-element array containing either player names or null for missing players
 	 */

@@ -28,6 +28,12 @@ public interface Lobby {
 	public boolean addPlayer(String username);
 	
 	/**
+	 * Gets the host of this lobby
+	 * @return The String username of the lobby host
+	 */
+	public String getHost();
+	
+	/**
 	 * Gets the players in this lobby
 	 * @return An array of size equal to the maximum player amount containing either player names or null for missing players
 	 */
