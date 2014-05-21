@@ -45,4 +45,10 @@ public interface Lobby {
 	 * @return True if the player could be found and the player wasn't the host. False otherwise
 	 */
 	public boolean removePlayer(String username);
+	
+	/**
+	 * Gets the settings of this lobby
+	 * @return The object storing the lobby settings
+	 */
+	public LobbySettings getSettings();
 }

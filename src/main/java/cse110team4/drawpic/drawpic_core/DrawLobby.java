@@ -17,6 +17,11 @@ public class DrawLobby implements Lobby {
 	 * The lobby host must be at index 0
 	 */
 	private List<String> players;
+	
+	/**
+	 * This stores the settings for this lobby
+	 */
+	private DrawLobbySettings settings;
 
 	/**
 	 * Constructs a new lobby with the given host
@@ -24,8 +29,9 @@ public class DrawLobby implements Lobby {
 	 */
 	public DrawLobby(String host) {
 		players = new ArrayList<String>(MAX_PLAYERS);
-		
 		players.add(host);
+		
+		settings = new DrawLobbySettings();
 	}
 	
 	/**
@@ -98,5 +104,14 @@ public class DrawLobby implements Lobby {
 			}
 		}
 		return false;
+	}
+
+	/**
+	 * Gets the settings of this lobby
+	 * @return The object storing the settings
+	 */
+	@Override
+	public DrawLobbySettings getSettings() {
+		return settings;
 	}
 }
