@@ -12,7 +12,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <org.springframework.version>4.0.3.RELEASE</org.springframework.version>
     <org.apache.activemq.version>5.8.0</org.apache.activemq.version>
     <junit.version>4.11</junit.version>
