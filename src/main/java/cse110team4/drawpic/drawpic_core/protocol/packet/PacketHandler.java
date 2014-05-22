@@ -1,6 +1,5 @@
-package cse110team4.drawpic.drawpic_core.protocol;
+package cse110team4.drawpic.drawpic_core.protocol.packet;
 
-import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
 /*
  * This handles what to do when a packet is received

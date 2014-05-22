@@ -18,6 +18,13 @@ public class PacketLoginResponse extends Packet {
 	private String failReason;
 	
 	/**
+	 * Private constructor that makes this packet without any set values
+	 */
+	private PacketLoginResponse() {
+		super(LOGIN_RESPONSE_ID);
+	}
+	
+	/**
 	 * Constructs a new login response
 	 * @param loginSuccess Whether or not the login was successful
 	 * @param failReason The reason for login failure (if any)
@@ -37,6 +44,10 @@ public class PacketLoginResponse extends Packet {
 		return loginSuccess;
 	}
 	
+	/**
+	 * Gets the reason for failure
+	 * @return A String for the failure. If login was successful, behavior undefined (most likely returns null)
+	 */
 	public String getFailReason() {
 		return failReason;
 	}
@@ -55,5 +66,20 @@ public class PacketLoginResponse extends Packet {
 			// Write the reason the login failed
 			message.writeString(failReason);
 		}
+	}
+	
+	/**
+	 * Reads this packet from the given message
+	 * @param message The message to read from
+	 * @return A PacketLoginResponse object with a state determined by the message data
+	 * @throws JMSException if there was a read failure
+	 */
+	public static PacketLoginResponse readFromMessage(StreamMessage message) throws JMSException {
+		PacketLoginResponse packet = new PacketLoginResponse();
+		packet.loginSuccess = message.readBoolean();
+		if (!packet.loginSuccess) {
+			packet.failReason = message.readString();
+		}
+		return packet;
 	}
 }

@@ -17,6 +17,13 @@ public class PacketLogin extends Packet {
 	private String username;
 	
 	/**
+	 * Private constructor that doesn't set any values
+	 */
+	private PacketLogin() {
+		super(LOGIN_ID);
+	}
+	
+	/**
 	 * Constructs with packet with the given username
 	 */
 	public PacketLogin(String username) {
@@ -42,5 +49,17 @@ public class PacketLogin extends Packet {
 	public void writeBodyToMessage(StreamMessage message) throws JMSException {
 		// Write the username
 		message.writeString(username);
+	}
+	
+	/**
+	 * Reads this packet from the given message
+	 * @param message The message to read from
+	 * @return A PacketLogin object containing information from the given message
+	 * @throws JMSException if there was a read failure
+	 */
+	public static PacketLogin readFromMessage(StreamMessage message) throws JMSException {
+		PacketLogin packet = new PacketLogin();
+		packet.username = message.readString();
+		return packet;
 	}
 }

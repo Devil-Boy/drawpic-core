@@ -61,16 +61,12 @@ public abstract class Packet implements Messageable {
 	public static Packet readFromMessage(StreamMessage message) throws JMSException {
 		byte packetID = message.readByte();
 		
-		// TODO: Make packet classes read themselves from messages
 		if (packetID == 0x01) {
-			return new PacketConnect();
+			return PacketConnect.readFromMessage(message);
 		} else if (packetID == 0x02) {
-			String username = message.readString();
-			return new PacketLogin(username);
+			return PacketLogin.readFromMessage(message);
 		} else if (packetID == 0x03) {
-			boolean loginSuccess = message.readBoolean();
-			String failReason = loginSuccess ? null : message.readString();
-			return new PacketLoginResponse(loginSuccess, failReason);
+			return PacketLoginResponse.readFromMessage(message);
 		} else {
 			// Received unknown packet type
 			return null;
