@@ -5,5 +5,5 @@ public class ActiveMQConstants {
 	public static String USERNAME = "student";	
 	public static String PASSWORD = "cse110";	
 
-	public static String QUEUENAME = "TEAM.4.test1"; // Must start with TEAM.4.
+	public static String SERVER_QUEUE = "TEAM.4.SERVER"; // Must start with TEAM.4.
 }
