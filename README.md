@@ -1,5 +1,5 @@
-# What is Drawpic-Core?
-Drawpic-Core is a set of interfaces, classes, and resources that can be shared between any java-based implementation of the Drawpic server or client.
+# What is DrawPic-Core?
+DrawPic-Core is a set of interfaces, classes, and resources that can be shared between any java-based implementation of the DrawPic server or client.
 
 # Why is it in a separate repository?
 Having this separate repository allows for a common ground, or standard protocol, that can reduce errors caused by needing to maintain two sets of the same code.
@@ -36,7 +36,7 @@ Afterwards a dependent project can shade it by having the following in their pom
   </build>
 ```
 
-# How is Drawpic-Core being developed?
+# How is DrawPic-Core being developed?
 Currently Kervin Sam is in charge of the structure and direction of the core files. It is recommended that other team members give him prior notice before attempting any changes as it could lead to breakage of dependents.
 
 # Notes
