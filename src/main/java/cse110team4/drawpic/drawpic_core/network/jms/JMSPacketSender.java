@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core.network;
+package cse110team4.drawpic.drawpic_core.network.jms;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;
@@ -6,6 +6,7 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.StreamMessage;
 
+import cse110team4.drawpic.drawpic_core.network.PacketSender;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
 /**
