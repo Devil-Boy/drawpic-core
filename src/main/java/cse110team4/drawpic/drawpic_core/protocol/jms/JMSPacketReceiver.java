@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core.network.jms;
+package cse110team4.drawpic.drawpic_core.protocol.jms;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;
@@ -8,9 +8,12 @@ import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.StreamMessage;
 
-import cse110team4.drawpic.drawpic_core.network.PacketReceiver;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 import cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler;
+import cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser;
+import cse110team4.drawpic.drawpic_core.protocol.packet.PacketReceiver;
 
 /**
  * This handles the receiving of packets through JMS
@@ -24,6 +27,8 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	private Destination receiveFrom;
 	private MessageConsumer receiver;
 	
+	private JMSStreamReader reader;
+	private PacketParser parser;
 	private PacketHandler handler;
 
 	/**
@@ -36,23 +41,20 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 		this.session = session;
 		this.receiveFrom = receiveFrom;
 		
+		// Set up packet parsing
+		this.reader = new JMSStreamReader();
+		this.parser = new PacketParser(this.reader);
+		
+		// Start receiving messages
 		receiver = session.createConsumer(receiveFrom);
 		receiver.setMessageListener(this);
 	}
 
-	/**
-	 * Sets the packet handler for this receiver
-	 * @param handler The packet handler to use
-	 */
 	@Override
 	public void setPacketHandler(PacketHandler handler) {
 		this.handler = handler;
 	}
 
-	/**
-	 * Gets the packet handler this receiver is routing packets to
-	 * @return The PacketHandler set to thie receiver or null if there isn't one
-	 */
 	@Override
 	public PacketHandler getPacketHandler() {
 		return handler;
@@ -69,14 +71,18 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 		if (handler != null) {
 			if (message instanceof StreamMessage) {
 				try {
-					Packet receivedPacket = Packet.readFromMessage((StreamMessage)message);
-					handler.handlePacket(receivedPacket);
-				} catch (JMSException e) {
-					// Something messed up
+					// Set the reader to read from this message
+					reader.setMessage((StreamMessage) message);
+					
+					// Parse the packet and send it to the handler
+					handler.handlePacket(parser.parsePacket());
+				} catch (StreamReadException e) {
+					// TODO: Handler a parse/read failure
 					e.printStackTrace();
 				}
 			} else {
 				// We aren't supposed to receive any other type of message
+				// TODO: Handle the receiving of the wrong type of message
 			}
 		}
 	}

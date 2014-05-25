@@ -43,20 +43,11 @@ public class DrawLobby implements Lobby {
 		return MAX_PLAYERS;
 	}
 	
-	/**
-	 * Gets the number of players currently in this lobby
-	 * @return An integer representing the number of players
-	 */
 	@Override
 	public int numOfPlayers() {
 		return players.size();
 	}
 	
-	/**
-	 * Attempts to add the specified player to this lobby
-	 * @param username The username of the player to add
-	 * @return True if the lobby isn't full and the player isn't already in the lobby. False otherwise
-	 */
 	@Override
 	public boolean addPlayer(String username) {
 		// Check if lobby is full
@@ -70,10 +61,6 @@ public class DrawLobby implements Lobby {
 		return false;
 	}
 	
-	/**
-	 * Gets the host of this lobby
-	 * @return The first player of the lobby
-	 */
 	@Override
 	public String getHost() {
 		return players.get(0);
@@ -88,11 +75,6 @@ public class DrawLobby implements Lobby {
 		return players.toArray(new String[MAX_PLAYERS]);
 	}
 
-	/**
-	 * Attempts to remove a player from this lobby
-	 * @param username The username of the player to remove
-	 * @return True if the player could be found and the player wasn't the host. False otherwise
-	 */
 	@Override
 	public boolean removePlayer(String username) {
 		// Check that the specified player is in the lobby
@@ -106,10 +88,6 @@ public class DrawLobby implements Lobby {
 		return false;
 	}
 
-	/**
-	 * Gets the settings of this lobby
-	 * @return The object storing the settings
-	 */
 	@Override
 	public DrawLobbySettings getSettings() {
 		return settings;

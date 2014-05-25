@@ -1,8 +1,9 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet.serverbound;
 
-import javax.jms.JMSException;
-import javax.jms.StreamMessage;
-
+import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
 /**
@@ -17,9 +18,9 @@ public class PacketLogin extends Packet {
 	private String username;
 	
 	/**
-	 * Private constructor that doesn't set any values
+	 * Constructor that doesn't set any initial values
 	 */
-	private PacketLogin() {
+	public PacketLogin() {
 		super(LOGIN_ID);
 	}
 	
@@ -27,7 +28,7 @@ public class PacketLogin extends Packet {
 	 * Constructs with packet with the given username
 	 */
 	public PacketLogin(String username) {
-		super(LOGIN_ID);
+		this();
 		
 		this.username = username;
 	}
@@ -40,26 +41,14 @@ public class PacketLogin extends Packet {
 		return username;
 	}
 
-	/**
-	 * Writes the username to the message
-	 * @param message The message to write to
-	 * @throws JMSException if there is a write failure
-	 */
 	@Override
-	public void writeBodyToMessage(StreamMessage message) throws JMSException {
+	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
 		// Write the username
-		message.writeString(username);
+		writer.writeString(username);
 	}
 	
-	/**
-	 * Reads this packet from the given message
-	 * @param message The message to read from
-	 * @return A PacketLogin object containing information from the given message
-	 * @throws JMSException if there was a read failure
-	 */
-	public static PacketLogin readFromMessage(StreamMessage message) throws JMSException {
-		PacketLogin packet = new PacketLogin();
-		packet.username = message.readString();
-		return packet;
+	@Override
+	public void readFromStream(StreamReader reader) throws StreamReadException {
+		username = reader.readString();
 	}
 }

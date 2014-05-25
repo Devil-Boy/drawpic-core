@@ -1,8 +1,9 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet.clientbound;
 
-import javax.jms.JMSException;
-import javax.jms.StreamMessage;
-
+import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
 /**
@@ -18,9 +19,9 @@ public class PacketLoginResponse extends Packet {
 	private String failReason;
 	
 	/**
-	 * Private constructor that makes this packet without any set values
+	 * Constructs this packet without any set values
 	 */
-	private PacketLoginResponse() {
+	public PacketLoginResponse() {
 		super(LOGIN_RESPONSE_ID);
 	}
 	
@@ -30,7 +31,7 @@ public class PacketLoginResponse extends Packet {
 	 * @param failReason The reason for login failure (if any)
 	 */
 	public PacketLoginResponse(boolean loginSuccess, String failReason) {
-		super(LOGIN_RESPONSE_ID);
+		this();
 		
 		this.loginSuccess = loginSuccess;
 		this.failReason = failReason;
@@ -52,34 +53,22 @@ public class PacketLoginResponse extends Packet {
 		return failReason;
 	}
 
-	/**
-	 * Write whether or not the login was successful and a failure reason if applicable
-	 * @param message The message to write to
-	 * @throws JMSException if there was a write failure
-	 */
 	@Override
-	public void writeBodyToMessage(StreamMessage message) throws JMSException {
+	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
 		// Write whether or not login was successful
-		message.writeBoolean(loginSuccess);
+		writer.writeBoolean(loginSuccess);
 		
 		if (!loginSuccess) {
 			// Write the reason the login failed
-			message.writeString(failReason);
+			writer.writeString(failReason);
 		}
 	}
 	
-	/**
-	 * Reads this packet from the given message
-	 * @param message The message to read from
-	 * @return A PacketLoginResponse object with a state determined by the message data
-	 * @throws JMSException if there was a read failure
-	 */
-	public static PacketLoginResponse readFromMessage(StreamMessage message) throws JMSException {
-		PacketLoginResponse packet = new PacketLoginResponse();
-		packet.loginSuccess = message.readBoolean();
-		if (!packet.loginSuccess) {
-			packet.failReason = message.readString();
+	@Override
+	public void readFromStream(StreamReader reader) throws StreamReadException {
+		loginSuccess = reader.readBoolean();
+		if (!loginSuccess) {
+			failReason = reader.readString();
 		}
-		return packet;
 	}
 }

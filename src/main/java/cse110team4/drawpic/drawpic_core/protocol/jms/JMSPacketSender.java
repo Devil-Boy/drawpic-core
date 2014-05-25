@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core.network.jms;
+package cse110team4.drawpic.drawpic_core.protocol.jms;
 
 import javax.jms.Destination;
 import javax.jms.JMSException;
@@ -6,8 +6,8 @@ import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.StreamMessage;
 
-import cse110team4.drawpic.drawpic_core.network.PacketSender;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
+import cse110team4.drawpic.drawpic_core.protocol.packet.PacketSender;
 
 /**
  * This handles the sending of packets through JMS
@@ -22,6 +22,8 @@ public class JMSPacketSender implements PacketSender {
 	private MessageProducer sender;
 	private Destination replyTo;
 	
+	private JMSStreamWriter writer;
+	
 	/**
 	 * Creates a new instance of this class that will send messages to the given destination
 	 * @param session The session to send messages through
@@ -32,19 +34,28 @@ public class JMSPacketSender implements PacketSender {
 		this.session = session;
 		this.sendTo = sendTo;
 		
+		// Create the message writer
+		writer = new JMSStreamWriter();
+		
+		// Prepare the message sender
 		sender = session.createProducer(sendTo);
 	}
 
-	/**
-	 * Sends the specified packet
-	 * @param packet The packet to send
-	 * @throws JMSException if there was a failure to write or send
-	 */
 	@Override
-	public void sendPacket(Packet packet) throws JMSException {
+	public void sendPacket(Packet packet) throws Exception {
+		// Create a new message
 		StreamMessage message = session.createStreamMessage();
-		packet.writeToMessage(message);
+		
+		// Set the writer to write to the message
+		writer.setMessage(message);
+		
+		// Write the packet
+		packet.writeToStream(writer);
+		
+		// Add a destination for replies
 		message.setJMSReplyTo(replyTo);
+		
+		// Send the packet off
 		sender.send(message);
 	}
 

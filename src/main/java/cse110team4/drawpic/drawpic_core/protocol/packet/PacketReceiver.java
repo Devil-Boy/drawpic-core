@@ -1,6 +1,5 @@
-package cse110team4.drawpic.drawpic_core.network;
+package cse110team4.drawpic.drawpic_core.protocol.packet;
 
-import cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler;
 
 
 /**
