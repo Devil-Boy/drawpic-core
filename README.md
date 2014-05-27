@@ -6,6 +6,7 @@ Having this separate repository allows for a common ground, or standard protocol
 
 # How will it be used?
 It is meant to be "shaded into" the packages of the previously mentioned projects.
+This means that the packages/classes of this project will be included in their archives (jar files).
 
 In order to do this, one must install the project into their local Maven repository. This is done by running Maven's "install" goal in the project directory.
 Afterwards a dependent project can shade it by having the following in their pom.xml
