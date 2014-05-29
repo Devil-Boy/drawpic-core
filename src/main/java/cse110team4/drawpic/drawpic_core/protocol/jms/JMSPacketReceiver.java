@@ -1,5 +1,8 @@
 package cse110team4.drawpic.drawpic_core.protocol.jms;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
@@ -9,7 +12,6 @@ import javax.jms.Session;
 import javax.jms.StreamMessage;
 
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
-import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 import cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler;
 import cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser;
@@ -29,7 +31,7 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	
 	private JMSStreamReader reader;
 	private PacketParser parser;
-	private PacketHandler handler;
+	private List<PacketHandler> handlers;
 
 	/**
 	 * Creates a new instance of this class that receives messages from the specified destination
@@ -45,19 +47,29 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 		this.reader = new JMSStreamReader();
 		this.parser = new PacketParser(this.reader);
 		
+		// Initialize the handler list
+		handlers = new ArrayList<PacketHandler>();
+		
 		// Start receiving messages
 		receiver = session.createConsumer(receiveFrom);
 		receiver.setMessageListener(this);
 	}
-
+	
 	@Override
-	public void setPacketHandler(PacketHandler handler) {
-		this.handler = handler;
+	public void addPacketHandler(PacketHandler handler) {
+		if (!handlers.contains(handler)) {
+			handlers.add(handler);
+		}
 	}
 
 	@Override
-	public PacketHandler getPacketHandler() {
-		return handler;
+	public void removePacketHandler(PacketHandler handler) {
+		handlers.remove(handler);
+	}
+
+	@Override
+	public List<PacketHandler> getPacketHandlers() {
+		return handlers;
 	}
 
 	/**
@@ -68,22 +80,33 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	 */
 	@Override
 	public void onMessage(Message message) {
-		if (handler != null) {
-			if (message instanceof StreamMessage) {
+		if (message instanceof StreamMessage) {
+			try {
+				// Set the reader to read from this message
+				reader.setMessage((StreamMessage) message);
+				
+				// Parse the packet
+				Packet packet = parser.parsePacket();
+				
+				// Set the packet correlation ID if there was a JMS one
 				try {
-					// Set the reader to read from this message
-					reader.setMessage((StreamMessage) message);
-					
-					// Parse the packet and send it to the handler
-					handler.handlePacket(parser.parsePacket());
-				} catch (StreamReadException e) {
-					// TODO: Handler a parse/read failure
+					packet.setCorrelationID(message.getJMSCorrelationID());
+				} catch (JMSException e) {
+					// Something happened while trying to get the correlation ID
 					e.printStackTrace();
 				}
-			} else {
-				// We aren't supposed to receive any other type of message
-				// TODO: Handle the receiving of the wrong type of message
+				
+				// Send the packet to the handlers
+				for (PacketHandler handler : handlers) {
+					handler.handlePacket(packet);
+				}
+			} catch (StreamReadException e) {
+				// TODO: Handler a parse/read failure
+				e.printStackTrace();
 			}
+		} else {
+			// We aren't supposed to receive any other type of message
+			// TODO: Handle the receiving of the wrong type of message
 		}
 	}
 }

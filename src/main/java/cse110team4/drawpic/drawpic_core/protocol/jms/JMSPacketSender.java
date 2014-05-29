@@ -55,6 +55,11 @@ public class JMSPacketSender implements PacketSender {
 		// Add a destination for replies
 		message.setJMSReplyTo(replyTo);
 		
+		// Set the correlation ID
+		if (packet.getCorrelationID() != null) {
+			message.setJMSCorrelationID(packet.getCorrelationID());
+		}
+		
 		// Send the packet off
 		sender.send(message);
 	}

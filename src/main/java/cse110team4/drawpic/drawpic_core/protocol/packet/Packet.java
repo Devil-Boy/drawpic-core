@@ -12,6 +12,7 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
  */
 public abstract class Packet implements Streamable {
 	private byte id;
+	private String correlationID;
 	
 	/**
 	 * Sets the type ID of this packet
@@ -27,6 +28,25 @@ public abstract class Packet implements Streamable {
 	public byte getID() {
 		return id;
 	}
+	
+	/**
+	 * Sets the correlation ID of this packet
+	 * This can be used to match packets with their corresponding reply packets
+	 * @param correlationID The correlation ID to use
+	 */
+	public void setCorrelationID(String correlationID) {
+		this.correlationID = correlationID;
+	}
+	
+	/**
+	 * Gets the correlation ID thie packet has set
+	 * @return The correlation ID of this packet or null if there isn't one set
+	 */
+	public String getCorrelationID() {
+		return correlationID;
+	}
+
+	
 	
 	@Override
 	public void writeToStream(StreamWriter writer) throws StreamWriteException {

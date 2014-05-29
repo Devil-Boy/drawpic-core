@@ -1,9 +1,11 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet;
 
+import java.util.List;
+
 
 
 /**
- * This interface will receive packets and route them to the packet handler
+ * This interface will receive packets and route them to the packet handlers
  *
  * @author Devil Boy (Kervin Sam)
  *
@@ -11,14 +13,20 @@ package cse110team4.drawpic.drawpic_core.protocol.packet;
 public interface PacketReceiver {
 
 	/**
-	 * Sets the packet handler that this receiver will send packets to
-	 * @param handler The packet handler to send packets to
+	 * Adds a packet handler that this receiver will send packets to
+	 * @param handler The packet handler to start sending packets to
 	 */
-	public void setPacketHandler(PacketHandler handler);
+	public void addPacketHandler(PacketHandler handler);
 	
 	/**
-	 * Gets the packet handler that is currently set
-	 * @return The PacketHandler that is handling received packets, null if none set
+	 * Remove a packet handler so that it no longer receives packets
+	 * @param handler The packet handler to no longer send packets to
 	 */
-	public PacketHandler getPacketHandler();
+	public void removePacketHandler(PacketHandler handler);
+	
+	/**
+	 * Gets the list of packet handlers
+	 * @return A list containing all the packet handler
+	 */
+	public List<PacketHandler> getPacketHandlers();
 }
