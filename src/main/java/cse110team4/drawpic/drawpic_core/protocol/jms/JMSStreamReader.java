@@ -113,4 +113,15 @@ public class JMSStreamReader extends JMSStreamHandler implements StreamReader {
 		}
 	}
 
+	@Override
+	public void readStrings(String[] buffer) throws StreamReadException {
+		try {
+			for (int i=0; i < buffer.length; i++) {
+				buffer[i] = message.readString();
+			}
+		} catch (JMSException e) {
+			throw new StreamReadException(e);
+		}
+	}
+
 }

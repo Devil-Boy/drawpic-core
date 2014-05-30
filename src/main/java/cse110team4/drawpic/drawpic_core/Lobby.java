@@ -1,54 +1,104 @@
 package cse110team4.drawpic.drawpic_core;
 
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
+import cse110team4.drawpic.drawpic_core.protocol.Streamable;
+
 /**
- * This interface represents a game lobby that can contain a certain amount of players and has a specified host player
+ * This represents a game lobby that can contain a certain amount of players and has a specified host player
  *
  * @author Devil Boy (Kervin Sam)
  *
  */
-public interface Lobby {
+public abstract class Lobby implements Streamable {
+	
+	/**
+	 * Stores who is hosting the lobby
+	 */
+	private String host;
+	
+	/**
+	 * This stores the settings for this lobby
+	 */
+	private LobbySettings settings;
+	
+	/**
+	 * Constructs this class with the given host and settings
+	 * @param host The host of this lobby
+	 * @param settings The object that will store the settings
+	 */
+	public Lobby(String host, LobbySettings settings) {
+		this.host = host;
+		this.settings = settings;
+	}
+	
+	/**
+	 * Gets the host of this lobby
+	 * @return The String username of the lobby host
+	 */
+	public String getHost() {
+		return host;
+	}
+	
+	/**
+	 * Gets the settings of this lobby
+	 * @return The object storing the lobby settings
+	 */
+	public LobbySettings getSettings() {
+		return settings;
+	}
 	
 	/**
 	 * Gets the maximum amount of players allowed in this lobby
 	 * @return An integer
 	 */
-	public int maxPlayers();
+	public abstract int maxPlayers();
 	
 	/**
 	 * Gets the number of players currently in this lobby
 	 * @return An integer representing the number of players
 	 */
-	public int numOfPlayers();
+	public abstract int numOfPlayers();
 	
 	/**
 	 * Attempts to add the specified player to this lobby
 	 * @param username The username of the player to add
 	 * @return True if the lobby isn't full and the player isn't already in the lobby. False otherwise
 	 */
-	public boolean addPlayer(String username);
-	
-	/**
-	 * Gets the host of this lobby
-	 * @return The String username of the lobby host
-	 */
-	public String getHost();
+	public abstract boolean addPlayer(String username);
 	
 	/**
 	 * Gets the players in this lobby
 	 * @return An array of size equal to the maximum player amount containing either player names or null for missing players
 	 */
-	public String[] getPlayers();
+	public abstract String[] getPlayers();
 	
 	/**
 	 * Attempts to remove a player from this lobby
 	 * @param username The username of the player to remove
 	 * @return True if the player could be found and the player wasn't the host. False otherwise
 	 */
-	public boolean removePlayer(String username);
+	public abstract boolean removePlayer(String username);
+	
+	@Override
+	public void writeToStream(StreamWriter writer) throws StreamWriteException {
+		// Write the lobby class name
+		writer.writeString(this.getClass().getName());
+		
+		// Write the lobby host
+		writer.writeString(host);
+		
+		// Write the lobby settings
+		settings.writeToStream(writer);
+		
+		// Write the lobby data
+		writeLobbyToStream(writer);
+	}
 	
 	/**
-	 * Gets the settings of this lobby
-	 * @return The object storing the lobby settings
+	 * Write the lobby using the given writer
+	 * @param writer The writer to use
+	 * @throws StreamWriteException if there was a write error
 	 */
-	public LobbySettings getSettings();
+	public abstract void writeLobbyToStream(StreamWriter writer) throws StreamWriteException;
 }

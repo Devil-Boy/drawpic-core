@@ -85,4 +85,11 @@ public interface StreamReader {
 	 * @throws StreamReadException if there was a read error
 	 */
 	public String readString() throws StreamReadException;
+	
+	/**
+	 * Reads an array of Strings from the stream into the given buffer
+	 * @param buffer The buffer to read into
+	 * @throws StreamReadException if there was a read error
+	 */
+	public void readStrings(String[] buffer) throws StreamReadException;
 }

@@ -113,4 +113,14 @@ public class JMSStreamWriter extends JMSStreamHandler implements StreamWriter {
 		}
 	}
 
+	@Override
+	public void writeStrings(String[] value) throws StreamWriteException {
+		try {
+			for (int i=0; i < value.length; i++) {
+				message.writeString(value[i]);
+			}
+		} catch (JMSException e) {
+			throw new StreamWriteException (e);
+		}
+	}
 }

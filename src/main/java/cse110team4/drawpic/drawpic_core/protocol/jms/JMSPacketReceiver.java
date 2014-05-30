@@ -30,7 +30,6 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	private MessageConsumer receiver;
 	
 	private JMSStreamReader reader;
-	private PacketParser parser;
 	private List<PacketHandler> handlers;
 
 	/**
@@ -45,7 +44,6 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 		
 		// Set up packet parsing
 		this.reader = new JMSStreamReader();
-		this.parser = new PacketParser(this.reader);
 		
 		// Initialize the handler list
 		handlers = new ArrayList<PacketHandler>();
@@ -86,7 +84,7 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 				reader.setMessage((StreamMessage) message);
 				
 				// Parse the packet
-				Packet packet = parser.parsePacket();
+				Packet packet = PacketParser.parsePacket(reader);
 				
 				// Set the packet correlation ID if there was a JMS one
 				try {

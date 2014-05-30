@@ -13,17 +13,8 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.PacketLogin;
  *
  */
 public class PacketParser {
-	private StreamReader reader;
-	
-	/**
-	 * Constructs this parser with the given stream reader
-	 * @param reader The reader that contains the packet data
-	 */
-	public PacketParser(StreamReader reader) {
-		this.reader = reader;
-	}
 
-	public Packet parsePacket() throws StreamReadException {
+	public static Packet parsePacket(StreamReader reader) throws StreamReadException {
 		// Get the packet's id
 		byte id = reader.readByte();
 		

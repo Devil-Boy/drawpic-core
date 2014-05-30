@@ -85,4 +85,11 @@ public interface StreamWriter {
 	 * @throws StreamWriteException if there was a write error
 	 */
 	public void writeString(String value) throws StreamWriteException;
+	
+	/**
+	 * Write an array of Strings to the stream
+	 * @param value The Strings to write
+	 * @throws StreamWriteException if there was a write error
+	 */
+	public void writeStrings(String[] value) throws StreamWriteException;
 }

@@ -1,12 +1,17 @@
 package cse110team4.drawpic.drawpic_core;
 
+import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
+
 /**
  * This represents the settings for the four player DrawPic game
  *
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class DrawLobbySettings implements LobbySettings {
+public class DrawLobbySettings extends LobbySettings {
 
 	/**
 	 * These are the posible methods of choosing round judges
@@ -98,5 +103,22 @@ public class DrawLobbySettings implements LobbySettings {
 	 */
 	public int getDrawTime() {
 		return drawTime;
+	}
+	
+	@Override
+	public void writeSettingsToStream(StreamWriter writer) throws StreamWriteException {
+		// Write the data
+		writer.writeString(judging.name());
+		writer.writeInt(rounds);
+		writer.writeInt(maxWins);
+		writer.writeInt(drawTime);
+	}
+
+	@Override
+	public void readFromStream(StreamReader reader) throws StreamReadException {
+		judging = JudgeSetting.valueOf(reader.readString());
+		rounds = reader.readInt();
+		maxWins = reader.readInt();
+		drawTime = reader.readInt();
 	}
 }

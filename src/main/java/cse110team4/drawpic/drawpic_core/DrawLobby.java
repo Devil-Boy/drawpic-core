@@ -3,13 +3,18 @@ package cse110team4.drawpic.drawpic_core;
 import java.util.ArrayList;
 import java.util.List;
 
+import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
+
 /**
  * This class represents a lobby for the draw game with a max of 4 players
  *
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class DrawLobby implements Lobby {
+public class DrawLobby extends Lobby {
 	static final int MAX_PLAYERS = 4;
 	
 	/**
@@ -17,21 +22,16 @@ public class DrawLobby implements Lobby {
 	 * The lobby host must be at index 0
 	 */
 	private List<String> players;
-	
-	/**
-	 * This stores the settings for this lobby
-	 */
-	private DrawLobbySettings settings;
 
 	/**
 	 * Constructs a new lobby with the given host
 	 * @param host The host's username
 	 */
 	public DrawLobby(String host) {
+		super(host, new DrawLobbySettings());
+		
 		players = new ArrayList<String>(MAX_PLAYERS);
 		players.add(host);
-		
-		settings = new DrawLobbySettings();
 	}
 	
 	/**
@@ -61,11 +61,6 @@ public class DrawLobby implements Lobby {
 		return false;
 	}
 	
-	@Override
-	public String getHost() {
-		return players.get(0);
-	}
-	
 	/**
 	 * Gets the players in this lobby
 	 * @return A 4-element array containing either player names or null for missing players
@@ -80,16 +75,28 @@ public class DrawLobby implements Lobby {
 		// Check that the specified player is in the lobby
 		if (players.contains(username)) {
 			// Make sure they aren't removing the host
-			if (!username.equals(players.get(0))) {
+			if (!username.equals(getHost())) {
 				players.remove(username);
 				return true;
 			}
 		}
 		return false;
 	}
+	
+	@Override
+	public void writeLobbyToStream(StreamWriter writer) throws StreamWriteException {
+		// Write player list to the stream
+		writer.writeStrings(getPlayers());
+	}
 
 	@Override
-	public DrawLobbySettings getSettings() {
-		return settings;
+	public void readFromStream(StreamReader reader) throws StreamReadException {
+		String[] receivedPlayers = new String[4];
+		reader.readStrings(receivedPlayers);
+		
+		players = new ArrayList<String>(MAX_PLAYERS);
+		for (int i=0; i < receivedPlayers.length; i++) {
+			players.set(i, receivedPlayers[i]);
+		}
 	}
 }
