@@ -12,7 +12,7 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class PacketLogin extends Packet {
+public class Packet02Login extends Packet {
 	final static byte LOGIN_ID = 0x02;
 	
 	private String username;
@@ -20,14 +20,14 @@ public class PacketLogin extends Packet {
 	/**
 	 * Constructor that doesn't set any initial values
 	 */
-	public PacketLogin() {
+	public Packet02Login() {
 		super(LOGIN_ID);
 	}
 	
 	/**
 	 * Constructs with packet with the given username
 	 */
-	public PacketLogin(String username) {
+	public Packet02Login(String username) {
 		this();
 		
 		this.username = username;

@@ -14,13 +14,13 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class PacketConnect extends Packet {
+public class Packet01Connect extends Packet {
 	final static byte CONNECT_ID = 0x01;
 	
 	/**
 	 * Constructs a new PacketConnect object
 	 */
-	public PacketConnect() {
+	public Packet01Connect() {
 		super(CONNECT_ID);
 	}
 

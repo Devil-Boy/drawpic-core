@@ -2,9 +2,9 @@ package cse110team4.drawpic.drawpic_core.protocol.packet;
 
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
-import cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.PacketConnect;
-import cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.PacketLoginResponse;
-import cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.PacketLogin;
+import cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.*;
+import cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.*;
+import cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.*;
 
 /**
  * This is in charge of parsing packets from the stream reader
@@ -20,11 +20,17 @@ public class PacketParser {
 		
 		Packet packet = null;
 		if (id == 0x01) {
-			packet = new PacketConnect();
+			packet = new Packet01Connect();
 		} else if (id == 0x02) {
-			packet = new PacketLogin();
+			packet = new Packet02Login();
 		} else if (id == 0x03) {
-			packet = new PacketLoginResponse();
+			packet = new Packet03LoginResponse();
+		} else if (id == 0x04) {
+			packet = new Packet04LobbyOption();
+		} else if (id == 0x05) {
+			packet = new Packet05Lobby();
+		} else if (id == 0x06) {
+			packet = new Packet06Disconnect();
 		}
 		
 		if (packet == null) {

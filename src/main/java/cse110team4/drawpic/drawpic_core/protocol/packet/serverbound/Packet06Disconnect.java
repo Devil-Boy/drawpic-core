@@ -1,35 +1,34 @@
-package cse110team4.drawpic.drawpic_core.protocol.packet.clientbound;
+package cse110team4.drawpic.drawpic_core.protocol.packet.serverbound;
 
-import cse110team4.drawpic.drawpic_core.Lobby;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
-public class PacketLobby extends Packet {
-	final static byte LOBBY_ID = 0x05;
+/**
+ * This packet notifies the server that this client is disconnecting properly
+ *
+ * @author Devil Boy (Kervin Sam)
+ *
+ */
+public class Packet06Disconnect extends Packet {
+	final static byte DISCONNECT_ID = 0x06;
 	
-	private Lobby lobby;
-	
-	public PacketLobby() {
-		super(LOBBY_ID);
-	}
-	
-	public PacketLobby(Lobby lobby) {
-		this();
-		this.lobby = lobby;
+	/**
+	 * Constructs this packet
+	 */
+	public Packet06Disconnect() {
+		super(DISCONNECT_ID);
 	}
 	
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
-		// Write the lobby to stream
-		
+		// This packet has no body so write nothing
 	}
-
+	
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		// TODO Auto-generated method stub
-		
+		// Do nothing because there's no message body in this packet
 	}
 }

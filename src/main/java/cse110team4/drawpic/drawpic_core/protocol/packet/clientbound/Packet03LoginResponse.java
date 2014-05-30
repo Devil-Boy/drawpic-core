@@ -12,7 +12,7 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class PacketLoginResponse extends Packet {
+public class Packet03LoginResponse extends Packet {
 	final static byte LOGIN_RESPONSE_ID = 0x03;
 	
 	private boolean loginSuccess;
@@ -21,7 +21,7 @@ public class PacketLoginResponse extends Packet {
 	/**
 	 * Constructs this packet without any set values
 	 */
-	public PacketLoginResponse() {
+	public Packet03LoginResponse() {
 		super(LOGIN_RESPONSE_ID);
 	}
 	
@@ -30,7 +30,7 @@ public class PacketLoginResponse extends Packet {
 	 * @param loginSuccess Whether or not the login was successful
 	 * @param failReason The reason for login failure (if any)
 	 */
-	public PacketLoginResponse(boolean loginSuccess, String failReason) {
+	public Packet03LoginResponse(boolean loginSuccess, String failReason) {
 		this();
 		
 		this.loginSuccess = loginSuccess;

@@ -12,7 +12,7 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class PacketLobbyOption extends Packet {
+public class Packet04LobbyOption extends Packet {
 	final static byte LOGIN_ID = 0x04;
 	
 	/**
@@ -31,7 +31,7 @@ public class PacketLobbyOption extends Packet {
 	/**
 	 * Constructor that doesn't set any initial values
 	 */
-	public PacketLobbyOption() {
+	public Packet04LobbyOption() {
 		super(LOGIN_ID);
 	}
 
@@ -39,7 +39,7 @@ public class PacketLobbyOption extends Packet {
 	 * Constructs the packet with the given option
 	 * @param option
 	 */
-	public PacketLobbyOption(Option option) {
+	public Packet04LobbyOption(Option option) {
 		this();
 		
 		this.option = option;
