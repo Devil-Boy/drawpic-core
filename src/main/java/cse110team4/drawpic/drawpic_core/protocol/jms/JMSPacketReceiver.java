@@ -25,12 +25,12 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.PacketReceiver;
  */
 public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	
-	private Session session;
-	private Destination receiveFrom;
-	private MessageConsumer receiver;
+	protected Session session;
+	protected Destination receiveFrom;
+	protected MessageConsumer receiver;
 	
-	private JMSStreamReader reader;
-	private List<PacketHandler> handlers;
+	protected JMSStreamReader reader;
+	protected List<PacketHandler> handlers;
 
 	/**
 	 * Creates a new instance of this class that receives messages from the specified destination
