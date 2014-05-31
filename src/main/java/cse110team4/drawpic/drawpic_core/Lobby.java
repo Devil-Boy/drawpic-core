@@ -25,16 +25,9 @@ public abstract class Lobby implements Streamable {
 	private LobbySettings settings;
 	
 	/**
-	 * Constructs this class without any variable definitions
-	 */
-	public Lobby() {
-	}
-	
-	/**
 	 * Constructs class with no arg
 	 */
 	public Lobby(){
-		
 	}
 	
 	/**
