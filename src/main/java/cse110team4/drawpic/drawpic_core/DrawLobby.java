@@ -22,13 +22,21 @@ public class DrawLobby extends Lobby {
 	 * The lobby host must be at index 0
 	 */
 	private List<String> players;
+	
+	/**
+	 * Constructs this object without any arguments
+	 */
+	public DrawLobby() {
+		super();
+	}
 
 	/**
 	 * Constructs a new lobby with the given host
 	 * @param host The host's username
+	 * @param settings The object that will store the settings
 	 */
-	public DrawLobby(String host) {
-		super(host, new DrawLobbySettings());
+	public DrawLobby(String host, LobbySettings settings) {
+		super(host, settings);
 		
 		players = new ArrayList<String>(MAX_PLAYERS);
 		players.add(host);

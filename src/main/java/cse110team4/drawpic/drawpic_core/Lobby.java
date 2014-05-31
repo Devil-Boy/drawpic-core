@@ -1,5 +1,7 @@
 package cse110team4.drawpic.drawpic_core;
 
+import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 import cse110team4.drawpic.drawpic_core.protocol.Streamable;
@@ -21,6 +23,12 @@ public abstract class Lobby implements Streamable {
 	 * This stores the settings for this lobby
 	 */
 	private LobbySettings settings;
+	
+	/**
+	 * Constructs this class without any variable definitions
+	 */
+	public Lobby() {
+	}
 	
 	/**
 	 * Constructs this class with the given host and settings
@@ -101,4 +109,28 @@ public abstract class Lobby implements Streamable {
 	 * @throws StreamWriteException if there was a write error
 	 */
 	public abstract void writeLobbyToStream(StreamWriter writer) throws StreamWriteException;
+	
+	/**
+	 * Obtains a Lobby object from the given reader
+	 * @param reader The reader to use
+	 * @return A subclass of Lobby depending on what was in the stream
+	 * @throws StreamReadException if there a read error
+	 */
+	public static Lobby fromStream(StreamReader reader) throws StreamReadException {
+		// Get class name
+		String type = reader.readString();
+		
+		Lobby lobby = null;
+		if (type.equals(DrawLobby.class.getName())) {
+			lobby = new DrawLobby();
+		}
+		
+		if (lobby == null) {
+			// TODO: Handle unknown lobby type
+		} else {
+			lobby.readFromStream(reader);
+		}
+		
+		return lobby;
+	}
 }

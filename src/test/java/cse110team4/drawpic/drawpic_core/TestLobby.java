@@ -10,13 +10,13 @@ public class TestLobby {
 
 	@Test
 	public void testMaxPlayers() {
-		DrawLobby lob = new DrawLobby("Bob");
+		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
 		assertEquals(4, lob.maxPlayers());
 	}
 	
 	@Test
 	public void testAddPlayers(){
-		DrawLobby lob = new DrawLobby("Bob");
+		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
 		assertTrue(lob.addPlayer("Frank"));
 		assertTrue(lob.addPlayer("Sinatra"));
 		assertFalse(lob.addPlayer("Frank")); //Test for adding the same name
@@ -27,7 +27,7 @@ public class TestLobby {
 	
 	@Test
 	public void testNumOfPLayers(){
-		DrawLobby lob = new DrawLobby("Bob");
+		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
 		assertEquals(1, lob.numOfPlayers());
 		lob.addPlayer("Frank");
 		assertEquals(2, lob.numOfPlayers());
@@ -39,7 +39,7 @@ public class TestLobby {
 	
 	@Test
 	public void testGetPlayers(){
-		DrawLobby lob = new DrawLobby("Bob");
+		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something);
 		lob.addPlayer("Frank");
 		lob.addPlayer("Sinatra");
 		lob.addPlayer("Bert");
@@ -52,7 +52,7 @@ public class TestLobby {
 	
 	@Test
 	public void testRemovePlayer(){
-		DrawLobby lob = new DrawLobby("Bob");
+		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
 		lob.addPlayer("Frank");
 		lob.addPlayer("Sinatra");
 		lob.addPlayer("Bert");
@@ -63,7 +63,7 @@ public class TestLobby {
 	
 	@Test
 	public void testGetHost(){
-		DrawLobby lob = new DrawLobby("Bob");
+		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something);
 		assertEquals("Bob",lob.getHost()); //Initial check
 		lob.addPlayer("Frank");
 		assertEquals("Bob",lob.getHost()); //checking after adding 1 player

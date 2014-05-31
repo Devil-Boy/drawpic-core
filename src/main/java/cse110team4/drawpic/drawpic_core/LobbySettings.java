@@ -26,6 +26,12 @@ public abstract class LobbySettings implements Streamable {
 	 */
 	public abstract void writeSettingsToStream(StreamWriter writer) throws StreamWriteException;
 	
+	/**
+	 * Obtains a LobbySettings object from the given reader
+	 * @param reader The reader to use
+	 * @return A subclass of LobbySettings depending on what was in the stream
+	 * @throws StreamReadException if there was a read error
+	 */
 	public static LobbySettings fromStream(StreamReader reader) throws StreamReadException {
 		// Get the class name
 		String type = reader.readString();

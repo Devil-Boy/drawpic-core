@@ -4,4 +4,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+	
+	
+	<bean id="drawLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.DrawLobbySettings">
+	</bean>
+	
 </beans>
