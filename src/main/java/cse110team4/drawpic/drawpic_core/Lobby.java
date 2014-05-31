@@ -23,6 +23,13 @@ public abstract class Lobby implements Streamable {
 	private LobbySettings settings;
 	
 	/**
+	 * Constructs class with no arg
+	 */
+	public Lobby(){
+		
+	}
+	
+	/**
 	 * Constructs this class with the given host and settings
 	 * @param host The host of this lobby
 	 * @param settings The object that will store the settings
