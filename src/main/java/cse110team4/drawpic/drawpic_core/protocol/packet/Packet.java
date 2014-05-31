@@ -39,7 +39,7 @@ public abstract class Packet implements Streamable {
 	}
 	
 	/**
-	 * Gets the correlation ID thie packet has set
+	 * Gets the correlation ID the packet has set
 	 * @return The correlation ID of this packet or null if there isn't one set
 	 */
 	public String getCorrelationID() {
