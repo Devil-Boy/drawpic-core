@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean name="emptyPacket01"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet01Connect">
+	</bean>
+	<bean name="emptyPacket02"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet02Login">
+	</bean>
+	<bean name="emptyPacket03"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet03Response">
+	</bean>
+	<bean name="emptyPacket04"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04LobbyOption">
+	</bean>
+</beans>
