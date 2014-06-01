@@ -24,10 +24,6 @@ public class Packet0CLeaveLobby extends Packet {
 	public Packet0CLeaveLobby() {
 		super(LEAVE_LOBBY);
 	}
-
-	public Packet0CLeaveLobby(String username){
-		super(LEAVE_LOBBY);
-	}
 	
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
