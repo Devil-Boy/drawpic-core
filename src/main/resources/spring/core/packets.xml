@@ -16,4 +16,37 @@
 	<bean name="emptyPacket04"
 		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04LobbyOption">
 	</bean>
+	<bean name="emptyPacket05"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet05Lobby">
+	</bean>
+	<bean name="emptyPacket06"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet06Disconnect">
+	</bean>
+	<bean name="emptyPacket07"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet07CreateLobby">
+	</bean>
+	<bean name="emptyPacket08"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet08GetLobbies">
+	</bean>
+	<bean name="emptyPacket09"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet09LobbyList">
+	</bean>
+	<bean name="emptyPacket0A"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0AJoinLobby">
+	</bean>
+	<bean name="emptyPacket0B"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0BPlayerJoined">
+	</bean>
+	<bean name="emptyPacket0C"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0CLeaveLobby">
+	</bean>
+	<bean name="emptyPacket0D"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0DPlayerLeft">
+	</bean>
+	<bean name="emptyPacket0E"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0ELobbySettings">
+	</bean>
+	<bean name="emptyPacket0F"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0FStartGame">
+	</bean>
 </beans>
