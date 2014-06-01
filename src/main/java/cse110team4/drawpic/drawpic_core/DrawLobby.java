@@ -28,18 +28,8 @@ public class DrawLobby extends Lobby {
 	 */
 	public DrawLobby() {
 		super();
-	}
-
-	/**
-	 * Constructs a new lobby with the given host
-	 * @param host The host's username
-	 * @param settings The object that will store the settings
-	 */
-	public DrawLobby(String host, LobbySettings settings) {
-		super(host, settings);
 		
 		players = new ArrayList<String>(MAX_PLAYERS);
-		players.add(host);
 	}
 	
 	/**

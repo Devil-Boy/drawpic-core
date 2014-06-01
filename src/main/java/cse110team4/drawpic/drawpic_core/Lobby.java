@@ -31,13 +31,11 @@ public abstract class Lobby implements Streamable {
 	}
 	
 	/**
-	 * Constructs this class with the given host and settings
-	 * @param host The host of this lobby
-	 * @param settings The object that will store the settings
+	 * Sets the host of this lobby
+	 * @return The String username of the lobby host
 	 */
-	public Lobby(String host, LobbySettings settings) {
-		this.host = host;
-		this.settings = settings;
+	public void setHost(String host) {
+		this.host = host;;
 	}
 	
 	/**
@@ -46,6 +44,14 @@ public abstract class Lobby implements Streamable {
 	 */
 	public String getHost() {
 		return host;
+	}
+	
+	/**
+	 * Gets the settings of this lobby
+	 * @return The object storing the lobby settings
+	 */
+	public void setSettings(LobbySettings settings) {
+		this.settings = settings;
 	}
 	
 	/**

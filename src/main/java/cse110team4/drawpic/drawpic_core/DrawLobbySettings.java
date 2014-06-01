@@ -31,14 +31,9 @@ public class DrawLobbySettings extends LobbySettings {
 	private int drawTime;
 	
 	/**
-	 * Constructs a new DrawLobbySettings object with default settings
+	 * Constructs a new DrawLobbySettings object
 	 */
 	public DrawLobbySettings() {
-		// Set defaults
-		judging = JudgeSetting.RANDOM;
-		rounds = 3;
-		maxWins = 3;
-		drawTime = 60;
 	}
 	
 	/**

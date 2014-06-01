@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	
+	
+	<bean id="defaultDrawLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.DrawLobbySettings">
+	<property name="judging" value="RANDOM"></property>
+	<property name="rounds" value="3"></property>
+	<property name="maxWins" value="3"></property>
+	<property name="drawTime" value="60"></property>
+	</bean>
+
+	<bean id="emptyDrawLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.DrawLobbySettings">
+	</bean>
+	<bean id="defaultDrawLobby"
+		class="cse110team4.drawpic.drawpic_core.DrawLobby">
+		<property name="settings" ref="defaultDrawLobbySettings"></property>
+	</bean>
+</beans>

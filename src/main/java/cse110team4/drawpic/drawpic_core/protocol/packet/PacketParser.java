@@ -1,10 +1,10 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
-import cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.*;
-import cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.*;
-import cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.*;
 
 /**
  * This is in charge of parsing packets from the stream reader
@@ -13,32 +13,34 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.*;
  *
  */
 public class PacketParser {
+	
+	private static ApplicationContext packetBeans = new ClassPathXmlApplicationContext("spring/core/packets.xml");
 
 	public static Packet parsePacket(StreamReader reader) throws StreamReadException {
 		// Get the packet's id
 		byte id = reader.readByte();
 		
 		Packet packet = null;
-		if (id == 0x01) {
-			packet = new Packet01Connect();
-		} else if (id == 0x02) {
-			packet = new Packet02Login();
-		} else if (id == 0x03) {
-			packet = new Packet03Response();
-		} else if (id == 0x04) {
-			packet = new Packet04LobbyOption();
-		} else if (id == 0x05) {
-			packet = new Packet05Lobby();
-		} else if (id == 0x06) {
-			packet = new Packet06Disconnect();
-		}
-		
-		if (packet == null) {
-			// TODO: Handle unknown packet ids
-		} else {
+		try {
+			packet = packetBeans.getBean("emptyPacket" + idToHexString(id), Packet.class);
 			packet.readFromStream(reader);
+		} catch (Exception e) {
+			// TODO: Handle bean not being found
 		}
 		
 		return packet;
+	}
+	
+	public static String idToHexString(byte id) {
+		StringBuilder sb = new StringBuilder();
+		String hex = Integer.toHexString(id);
+		
+		// Add any leading zeros
+		if (hex.length() < 2) {
+			sb.append('0');
+		}
+		sb.append(hex);
+		
+		return sb.toString();
 	}
 }
