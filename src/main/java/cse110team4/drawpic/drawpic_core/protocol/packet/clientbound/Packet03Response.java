@@ -12,28 +12,28 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class Packet03LoginResponse extends Packet {
+public class Packet03Response extends Packet {
 	final static byte LOGIN_RESPONSE_ID = 0x03;
 	
-	private boolean loginSuccess;
+	private boolean success;
 	private String failReason;
 	
 	/**
 	 * Constructs this packet without any set values
 	 */
-	public Packet03LoginResponse() {
+	public Packet03Response() {
 		super(LOGIN_RESPONSE_ID);
 	}
 	
 	/**
 	 * Constructs a new login response
-	 * @param loginSuccess Whether or not the login was successful
+	 * @param success Whether or not the login was successful
 	 * @param failReason The reason for login failure (if any)
 	 */
-	public Packet03LoginResponse(boolean loginSuccess, String failReason) {
+	public Packet03Response(boolean success, String failReason) {
 		this();
 		
-		this.loginSuccess = loginSuccess;
+		this.success = success;
 		this.failReason = failReason;
 	}
 	
@@ -41,8 +41,8 @@ public class Packet03LoginResponse extends Packet {
 	 * Gets whether or not the login was successful
 	 * @return The login's success
 	 */
-	public boolean getLoginSuccess() {
-		return loginSuccess;
+	public boolean getSuccess() {
+		return success;
 	}
 	
 	/**
@@ -56,9 +56,9 @@ public class Packet03LoginResponse extends Packet {
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
 		// Write whether or not login was successful
-		writer.writeBoolean(loginSuccess);
+		writer.writeBoolean(success);
 		
-		if (!loginSuccess) {
+		if (!success) {
 			// Write the reason the login failed
 			writer.writeString(failReason);
 		}
@@ -66,8 +66,8 @@ public class Packet03LoginResponse extends Packet {
 	
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		loginSuccess = reader.readBoolean();
-		if (!loginSuccess) {
+		success = reader.readBoolean();
+		if (!success) {
 			failReason = reader.readString();
 		}
 	}

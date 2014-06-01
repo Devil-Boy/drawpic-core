@@ -24,7 +24,7 @@ public class PacketParser {
 		} else if (id == 0x02) {
 			packet = new Packet02Login();
 		} else if (id == 0x03) {
-			packet = new Packet03LoginResponse();
+			packet = new Packet03Response();
 		} else if (id == 0x04) {
 			packet = new Packet04LobbyOption();
 		} else if (id == 0x05) {
