@@ -8,7 +8,7 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
 /**
- * Packet used to signal a player joining a certian lobby
+ * Packet used to signal a player joining a certain lobby
  * @author Kirk
  *
  */
