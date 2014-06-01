@@ -11,16 +11,16 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  * @author Kirk
  *
  */
-public class Packet0aJoinLobby extends Packet{
+public class Packet0AJoinLobby extends Packet{
 	
 	private String username;
 	
-	final static byte JOIN_LOBBY = 0x0a;
+	final static byte JOIN_LOBBY = 0x0A;
 	
 	/**
 	 * Default constructor
 	 */
-	public Packet0aJoinLobby() {
+	public Packet0AJoinLobby() {
 		super(JOIN_LOBBY);
 	}
 	
@@ -28,7 +28,7 @@ public class Packet0aJoinLobby extends Packet{
 	 * Constructs a packet to indicate joining a lobby
 	 * @param username to be sent with packet indicating user joining lobby
 	 */
-	public Packet0aJoinLobby(String username){
+	public Packet0AJoinLobby(String username){
 		super(JOIN_LOBBY);
 		this.username = username;
 	}
