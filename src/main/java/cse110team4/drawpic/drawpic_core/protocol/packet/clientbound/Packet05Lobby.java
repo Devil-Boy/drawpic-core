@@ -24,12 +24,11 @@ public class Packet05Lobby extends Packet {
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
 		// Write the lobby to stream
-		
+		lobby.writeToStream(writer);
 	}
 
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		// TODO Auto-generated method stub
-		
+		lobby = Lobby.fromStream(reader);
 	}
 }
