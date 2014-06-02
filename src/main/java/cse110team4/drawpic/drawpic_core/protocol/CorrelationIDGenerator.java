@@ -8,17 +8,16 @@ import java.util.Random;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class CorrelationIDFactory {
-	
-	private static CorrelationIDFactory singleton = new CorrelationIDFactory();
+public class CorrelationIDGenerator {
 
 	private Random random;
 	
 	/**
-	 * Constructs a new instance of this class
+	 * Constructs a new instance of this class using the given random generator
+	 * @param random The random generator to use
 	 */
-	public CorrelationIDFactory() {
-		random = new Random();
+	public CorrelationIDGenerator(Random random) {
+		this.random = random;
 	}
 	
 	/**
@@ -27,13 +26,5 @@ public class CorrelationIDFactory {
 	 */
 	public String randomCorrelationID() {
 		return Long.toHexString(random.nextLong());
-	}
-	
-	/**
-	 * Gets the singleton of this class
-	 * @return A CorrelationIDFactory instance
-	 */
-	public static CorrelationIDFactory getFactory() {
-		return singleton;
 	}
 }

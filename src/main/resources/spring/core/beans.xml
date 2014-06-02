@@ -68,4 +68,10 @@
 		id="activeMQServerQueue" />
 	
 	
+	<bean id="correlationIDGenerator"
+		class="cse110team4.drawpic.drawpic_core.protocol.CorrelationIDGenerator">
+		<constructor-arg>
+			<bean class="java.util.Random"></bean>
+		</constructor-arg>
+	</bean>
 </beans>

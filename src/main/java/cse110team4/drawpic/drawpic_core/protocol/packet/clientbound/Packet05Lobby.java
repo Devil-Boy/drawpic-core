@@ -1,6 +1,8 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet.clientbound;
 
+import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.lobby.Lobby;
+import cse110team4.drawpic.drawpic_core.lobby.LobbyParser;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
@@ -29,6 +31,6 @@ public class Packet05Lobby extends Packet {
 
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		lobby = Lobby.fromStream(reader);
+		lobby = CoreBeans.getContext().getBean(LobbyParser.class).fromStream(reader);
 	}
 }
