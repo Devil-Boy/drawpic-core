@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core;
+package cse110team4.drawpic.drawpic_core.lobby;
 
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
@@ -11,7 +11,7 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class DrawLobbySettings extends LobbySettings {
+public class NormalLobbySettings extends LobbySettings {
 
 	/**
 	 * These are the posible methods of choosing round judges
@@ -33,7 +33,7 @@ public class DrawLobbySettings extends LobbySettings {
 	/**
 	 * Constructs a new DrawLobbySettings object
 	 */
-	public DrawLobbySettings() {
+	public NormalLobbySettings() {
 	}
 	
 	/**

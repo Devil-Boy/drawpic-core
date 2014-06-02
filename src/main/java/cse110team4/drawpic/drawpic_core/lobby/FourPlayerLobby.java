@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core;
+package cse110team4.drawpic.drawpic_core.lobby;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class DrawLobby extends Lobby {
+public class FourPlayerLobby extends Lobby {
 	static final int MAX_PLAYERS = 4;
 	
 	/**
@@ -26,10 +26,24 @@ public class DrawLobby extends Lobby {
 	/**
 	 * Constructs this object, passing in the internal list to use
 	 */
-	public DrawLobby(List<String> playerList) {
+	public FourPlayerLobby(List<String> playerList) {
 		super();
 		
 		this.players = playerList;
+	}
+	
+	@Override
+	public void setHost(String host) {
+		if (players.isEmpty()) {
+			players.add(0, host);
+		} else {
+			players.set(0, host);
+		}
+	}
+
+	@Override
+	public String getHost() {
+		return players.get(0);
 	}
 	
 	/**

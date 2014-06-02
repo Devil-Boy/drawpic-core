@@ -9,12 +9,17 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
  *
  * @author Devil Boy (Kervin Sam)
  *
+ * @category Single Responsibility Principle
  */
 public class PacketParser {
 	
-	
-
-	public static Packet parsePacket(StreamReader reader) throws StreamReadException {
+	/**
+	 * Parses a packet from the given stream reader
+	 * @param reader The reader to use
+	 * @return A Packet based on the reader's data
+	 * @throws StreamReadException if there was a read error
+	 */
+	public Packet parsePacket(StreamReader reader) throws StreamReadException {
 		// Get the packet's id
 		byte id = reader.readByte();
 		
@@ -30,7 +35,12 @@ public class PacketParser {
 		return packet;
 	}
 	
-	public static String idToHexString(byte id) {
+	/**
+	 * Utility method to convert bytes to hexadecimal Strings and not lose leading zeros
+	 * @param id The byte to convert
+	 * @return A String representing a byte in hexadecimal form
+	 */
+	public String idToHexString(byte id) {
 		StringBuilder sb = new StringBuilder();
 		String hex = Integer.toHexString(id);
 		

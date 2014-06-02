@@ -1,5 +1,6 @@
-package cse110team4.drawpic.drawpic_core;
+package cse110team4.drawpic.drawpic_core.lobby;
 
+import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
@@ -15,11 +16,6 @@ import cse110team4.drawpic.drawpic_core.protocol.Streamable;
 public abstract class Lobby implements Streamable {
 	
 	/**
-	 * Stores who is hosting the lobby
-	 */
-	private String host;
-	
-	/**
 	 * This stores the settings for this lobby
 	 */
 	private LobbySettings settings;
@@ -32,19 +28,15 @@ public abstract class Lobby implements Streamable {
 	
 	/**
 	 * Sets the host of this lobby
-	 * @return The String username of the lobby host
+	 * @param host The host of the lobby
 	 */
-	public void setHost(String host) {
-		this.host = host;;
-	}
+	public abstract void setHost(String host);
 	
 	/**
 	 * Gets the host of this lobby
 	 * @return The String username of the lobby host
 	 */
-	public String getHost() {
-		return host;
-	}
+	public abstract String getHost();
 	
 	/**
 	 * Gets the settings of this lobby
@@ -99,9 +91,6 @@ public abstract class Lobby implements Streamable {
 		// Write the lobby class name
 		writer.writeString(this.getClass().getSimpleName());
 		
-		// Write the lobby host
-		writer.writeString(host);
-		
 		// Write the lobby settings
 		settings.writeToStream(writer);
 		
@@ -115,26 +104,4 @@ public abstract class Lobby implements Streamable {
 	 * @throws StreamWriteException if there was a write error
 	 */
 	public abstract void writeLobbyToStream(StreamWriter writer) throws StreamWriteException;
-	
-	/**
-	 * Obtains a Lobby object from the given reader
-	 * @param reader The reader to use
-	 * @return A subclass of Lobby depending on what was in the stream
-	 * @throws StreamReadException if there a read error
-	 */
-	public static Lobby fromStream(StreamReader reader) throws StreamReadException {
-		// Get class name
-		String type = reader.readString();
-		
-		Lobby lobby = null;
-		try {
-			lobby = CoreBeans.getContext().getBean("emptyDrawLobby", Lobby.class);
-			lobby.readFromStream(reader);
-		} catch (Exception e) {
-			// TODO: Handle lobby bean not found
-			e.printStackTrace();
-		}
-		
-		return lobby;
-	}
 }

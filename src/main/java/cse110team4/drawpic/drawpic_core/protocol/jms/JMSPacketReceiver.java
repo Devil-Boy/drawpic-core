@@ -11,6 +11,7 @@ import javax.jms.MessageListener;
 import javax.jms.Session;
 import javax.jms.StreamMessage;
 
+import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 import cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler;
@@ -25,12 +26,12 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.PacketReceiver;
  */
 public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	
-	protected Session session;
-	protected Destination receiveFrom;
-	protected MessageConsumer receiver;
+	private Session session;
+	private Destination receiveFrom;
+	private MessageConsumer receiver;
 	
-	protected JMSStreamReader reader;
-	protected List<PacketHandler> handlers;
+	private JMSStreamReader reader;
+	private List<PacketHandler> handlers;
 
 	/**
 	 * Creates a new instance of this class that receives messages from the specified destination
@@ -84,7 +85,7 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 				reader.setMessage((StreamMessage) message);
 				
 				// Parse the packet
-				Packet packet = PacketParser.parsePacket(reader);
+				Packet packet = CoreBeans.getContext().getBean(PacketParser.class).parsePacket(reader);
 				
 				// Set the packet correlation ID if there was a JMS one
 				try {
@@ -99,7 +100,7 @@ public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 					handler.handlePacket(packet);
 				}
 			} catch (StreamReadException e) {
-				// TODO: Handler a parse/read failure
+				// TODO: Handle a parse/read failure
 				e.printStackTrace();
 			}
 		} else {

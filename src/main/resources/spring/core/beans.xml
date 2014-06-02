@@ -6,28 +6,66 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 
-	<import resource="spring/core/packets.xml" />
-	<import resource="spring/core/jms.xml" />
+	<import resource="packets.xml" />
+	<import resource="jms.xml" />
 
-	<bean id="defaultDrawLobbySettings"
-		class="cse110team4.drawpic.drawpic_core.DrawLobbySettings">
+	<bean id="defaultNormalLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.lobby.NormalLobbySettings"
+		scope="prototype">
 		<property name="judging" value="RANDOM"></property>
 		<property name="rounds" value="3"></property>
 		<property name="maxWins" value="3"></property>
 		<property name="drawTime" value="60"></property>
 	</bean>
-	
-	<bean id="emptyDrawLobbySettings"
-		class="cse110team4.drawpic.drawpic_core.DrawLobbySettings">
+
+	<bean id="emptyNormalLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.lobby.NormalLobbySettings"
+		scope="prototype">
+	</bean>
+
+	<bean id="defaultFourPlayerLobby"
+		class="cse110team4.drawpic.drawpic_core.lobby.FourPlayerLobby"
+		scope="prototype">
+		<property name="settings" ref="defaultNormalLobbySettings"></property>
+		<constructor-arg>
+			<util:list value-type="java.lang.String"
+				list-class="java.util.ArrayList">
+			</util:list>
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="lobbyParser"
+		class="cse110team4.drawpic.drawpic_core.lobby.LobbyParser">
+	</bean>
+	<bean id="lobbySettingsParser"
+		class="cse110team4.drawpic.drawpic_core.lobby.LobbySettingsParser">
+	</bean>
+	<bean id="jmsStreamReader"
+		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader">
 	</bean>
 	
-	<bean id="defaultDrawLobby"
-		class="cse110team4.drawpic.drawpic_core.DrawLobby">
-		<property name="settings" ref="defaultDrawLobbySettings"></property>
-		<constructor-arg ref="emptyArrayList"></constructor-arg>
+	
+	<bean id="jmsStreamWriter"
+		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamWriter">
 	</bean>
 	
-	<util:list id="emptyArrayList" value-type="java.lang.String"
-		list-class="java.util.ArrayList">
-	</util:list>
+	
+	<bean id="packetParser"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser"
+		scope="singleton">
+	</bean>
+	<util:constant id="activeMQURL"
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.ACTIVEMQ_URL" />
+
+	<util:constant id="activeMQUsername"
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.USERNAME" />
+	<util:constant
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.PASSWORD"
+		id="activeMQPassword" />
+	<util:constant
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.SERVER_QUEUE"
+		id="activeMQServerQueue" />
+	
+	
 </beans>

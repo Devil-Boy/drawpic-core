@@ -1,22 +1,27 @@
-package cse110team4.drawpic.drawpic_core;
+package cse110team4.drawpic.drawpic_core.lobby;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import cse110team4.drawpic.drawpic_core.DrawLobby;
+import cse110team4.drawpic.drawpic_core.CoreBeans;
+import cse110team4.drawpic.drawpic_core.lobby.FourPlayerLobby;
 
-public class TestLobby {
+public class TestFourPlayerLobby {
 
 	@Test
 	public void testMaxPlayers() {
-		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
+		FourPlayerLobby lob = CoreBeans.getContext().getBean("defaultFourPlayerLobby", FourPlayerLobby.class); // TODO: Pass a mock or something
+		lob.setHost("Bob");
+		
 		assertEquals(4, lob.maxPlayers());
 	}
 	
 	@Test
 	public void testAddPlayers(){
-		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
+		FourPlayerLobby lob = CoreBeans.getContext().getBean("defaultFourPlayerLobby", FourPlayerLobby.class); // TODO: Pass a mock or something
+		lob.setHost("Bob");
+		
 		assertTrue(lob.addPlayer("Frank"));
 		assertTrue(lob.addPlayer("Sinatra"));
 		assertFalse(lob.addPlayer("Frank")); //Test for adding the same name
@@ -27,7 +32,9 @@ public class TestLobby {
 	
 	@Test
 	public void testNumOfPLayers(){
-		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
+		FourPlayerLobby lob = CoreBeans.getContext().getBean("defaultFourPlayerLobby", FourPlayerLobby.class); // TODO: Pass a mock or something
+		lob.setHost("Bob");
+		
 		assertEquals(1, lob.numOfPlayers());
 		lob.addPlayer("Frank");
 		assertEquals(2, lob.numOfPlayers());
@@ -39,7 +46,9 @@ public class TestLobby {
 	
 	@Test
 	public void testGetPlayers(){
-		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something);
+		FourPlayerLobby lob = CoreBeans.getContext().getBean("defaultFourPlayerLobby", FourPlayerLobby.class); // TODO: Pass a mock or something
+		lob.setHost("Bob");
+		
 		lob.addPlayer("Frank");
 		lob.addPlayer("Sinatra");
 		lob.addPlayer("Bert");
@@ -52,7 +61,9 @@ public class TestLobby {
 	
 	@Test
 	public void testRemovePlayer(){
-		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something
+		FourPlayerLobby lob = CoreBeans.getContext().getBean("defaultFourPlayerLobby", FourPlayerLobby.class); // TODO: Pass a mock or something
+		lob.setHost("Bob");
+		
 		lob.addPlayer("Frank");
 		lob.addPlayer("Sinatra");
 		lob.addPlayer("Bert");
@@ -63,7 +74,9 @@ public class TestLobby {
 	
 	@Test
 	public void testGetHost(){
-		DrawLobby lob = new DrawLobby("Bob", null); // TODO: Pass a mock or something);
+		FourPlayerLobby lob = CoreBeans.getContext().getBean("defaultFourPlayerLobby", FourPlayerLobby.class); // TODO: Pass a mock or something
+		lob.setHost("Bob");
+		
 		assertEquals("Bob",lob.getHost()); //Initial check
 		lob.addPlayer("Frank");
 		assertEquals("Bob",lob.getHost()); //checking after adding 1 player

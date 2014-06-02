@@ -7,6 +7,13 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
+/**
+ * This allows for the receiving of expected packets in an asynchronous packet system
+ *
+ * @author Devil Boy (Kervin Sam)
+ *
+ * @param <T> The packet type expected
+ */
 public class PacketReply<T extends Packet> implements Future<T>, PacketHandler {
 	
 	private static enum State {WAITING, DONE, CANCELLED}
@@ -14,11 +21,14 @@ public class PacketReply<T extends Packet> implements Future<T>, PacketHandler {
 	private final BlockingQueue<T> reply;
 	private volatile State state;
 	
+	private boolean oneShot;
+
 	private PacketReceiver receiver;
 	private byte packetType;
 	private String correlationID;
 	
 	public PacketReply(PacketReceiver receiver, byte packetType, String correlationID) {
+		this.oneShot = true;
 		this.receiver = receiver;
 		this.packetType = packetType;
 		this.correlationID = correlationID;
@@ -29,6 +39,22 @@ public class PacketReply<T extends Packet> implements Future<T>, PacketHandler {
 		
 		// Add self to packet handlers
 		receiver.addPacketHandler(this);
+	}
+	
+	/**
+	 * Gets whether or not this class will stop looking for replies after a single "get" attempt
+	 * @return A boolean
+	 */
+	public boolean isOneShot() {
+		return oneShot;
+	}
+
+	/**
+	 * Sets whether or not this class should stop listening for replies after a single "get" request
+	 * @param oneShot True if this should unregister itself during the next "get" call
+	 */
+	public void setOneShot(boolean oneShot) {
+		this.oneShot = oneShot;
 	}
 
 	@Override
@@ -50,6 +76,10 @@ public class PacketReply<T extends Packet> implements Future<T>, PacketHandler {
 
 	@Override
 	public T get() throws InterruptedException, ExecutionException {
+		if (oneShot) {
+			cleanUp();
+		}
+		
 		return this.reply.take();
 	}
 
@@ -60,6 +90,11 @@ public class PacketReply<T extends Packet> implements Future<T>, PacketHandler {
 		if (queueResult == null) {
 			throw new TimeoutException();
 		}
+		
+		if (oneShot) {
+			cleanUp();
+		}
+		
 		return queueResult;
 	}
 
@@ -72,6 +107,9 @@ public class PacketReply<T extends Packet> implements Future<T>, PacketHandler {
 				try {
 					// Set this packet as the reply we wanted
 					reply.put((T) packet);
+					
+					state = State.DONE;
+					cleanUp();
 				} catch (InterruptedException e) {
 					// We got interrupted while trying to set the reply
 					e.printStackTrace();

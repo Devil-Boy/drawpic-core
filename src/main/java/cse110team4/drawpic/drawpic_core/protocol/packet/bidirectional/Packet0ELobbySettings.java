@@ -1,6 +1,6 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional;
 
-import cse110team4.drawpic.drawpic_core.LobbySettings;
+import cse110team4.drawpic.drawpic_core.lobby.LobbySettings;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
