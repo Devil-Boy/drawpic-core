@@ -1,6 +1,10 @@
 package cse110team4.drawpic.drawpic_core;
 
-import cse110team4.drawpic.drawpic_core.protocol.*;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
+import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
+import cse110team4.drawpic.drawpic_core.protocol.Streamable;
 
 /**
  * This represents the settings for a game lobby
@@ -13,7 +17,7 @@ public abstract class LobbySettings implements Streamable {
 	@Override
 	public void writeToStream(StreamWriter writer) throws StreamWriteException {
 		// Write the class name
-		writer.writeString(this.getClass().getName());
+		writer.writeString(this.getClass().getSimpleName());
 		
 		// Write the settings
 		writeSettingsToStream(writer);
@@ -37,14 +41,12 @@ public abstract class LobbySettings implements Streamable {
 		String type = reader.readString();
 		
 		LobbySettings settings = null;
-		if (type.equals(DrawLobbySettings.class.getName())) {
-			settings = new DrawLobbySettings();
-		}
-		
-		if (settings == null) {
-			// TODO: Handle unknown settings type
-		} else {
+		try {
+			settings = CoreBeans.getContext().getBean("empty" + type, LobbySettings.class);
 			settings.readFromStream(reader);
+		} catch (Exception e) {
+			// TODO: Handle lobby settings bean not found
+			e.printStackTrace();
 		}
 		
 		return settings;

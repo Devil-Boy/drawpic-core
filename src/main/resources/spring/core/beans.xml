@@ -1,24 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 
-	
-	
+	<import resource="spring/core/packets.xml" />
+	<import resource="spring/core/jms.xml" />
+
 	<bean id="defaultDrawLobbySettings"
 		class="cse110team4.drawpic.drawpic_core.DrawLobbySettings">
-	<property name="judging" value="RANDOM"></property>
-	<property name="rounds" value="3"></property>
-	<property name="maxWins" value="3"></property>
-	<property name="drawTime" value="60"></property>
+		<property name="judging" value="RANDOM"></property>
+		<property name="rounds" value="3"></property>
+		<property name="maxWins" value="3"></property>
+		<property name="drawTime" value="60"></property>
 	</bean>
-
+	
 	<bean id="emptyDrawLobbySettings"
 		class="cse110team4.drawpic.drawpic_core.DrawLobbySettings">
 	</bean>
+	
 	<bean id="defaultDrawLobby"
 		class="cse110team4.drawpic.drawpic_core.DrawLobby">
 		<property name="settings" ref="defaultDrawLobbySettings"></property>
+		<constructor-arg ref="emptyArrayList"></constructor-arg>
 	</bean>
+	
+	<util:list id="emptyArrayList" value-type="java.lang.String"
+		list-class="java.util.ArrayList">
+	</util:list>
 </beans>

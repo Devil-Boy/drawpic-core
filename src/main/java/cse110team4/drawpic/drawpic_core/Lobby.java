@@ -97,7 +97,7 @@ public abstract class Lobby implements Streamable {
 	@Override
 	public void writeToStream(StreamWriter writer) throws StreamWriteException {
 		// Write the lobby class name
-		writer.writeString(this.getClass().getName());
+		writer.writeString(this.getClass().getSimpleName());
 		
 		// Write the lobby host
 		writer.writeString(host);
@@ -127,14 +127,12 @@ public abstract class Lobby implements Streamable {
 		String type = reader.readString();
 		
 		Lobby lobby = null;
-		if (type.equals(DrawLobby.class.getName())) {
-			lobby = new DrawLobby();
-		}
-		
-		if (lobby == null) {
-			// TODO: Handle unknown lobby type
-		} else {
+		try {
+			lobby = CoreBeans.getContext().getBean("emptyDrawLobby", Lobby.class);
 			lobby.readFromStream(reader);
+		} catch (Exception e) {
+			// TODO: Handle lobby bean not found
+			e.printStackTrace();
 		}
 		
 		return lobby;

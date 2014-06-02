@@ -24,12 +24,12 @@ public class DrawLobby extends Lobby {
 	private List<String> players;
 	
 	/**
-	 * Constructs this object without any arguments
+	 * Constructs this object, passing in the internal list to use
 	 */
-	public DrawLobby() {
+	public DrawLobby(List<String> playerList) {
 		super();
 		
-		players = new ArrayList<String>(MAX_PLAYERS);
+		this.players = playerList;
 	}
 	
 	/**

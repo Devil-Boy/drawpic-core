@@ -1,8 +1,6 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
+import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 
@@ -14,7 +12,7 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
  */
 public class PacketParser {
 	
-	private static ApplicationContext packetBeans = new ClassPathXmlApplicationContext("spring/core/packets.xml");
+	
 
 	public static Packet parsePacket(StreamReader reader) throws StreamReadException {
 		// Get the packet's id
@@ -22,10 +20,11 @@ public class PacketParser {
 		
 		Packet packet = null;
 		try {
-			packet = packetBeans.getBean("emptyPacket" + idToHexString(id), Packet.class);
+			packet = CoreBeans.getContext().getBean("emptyPacket" + idToHexString(id), Packet.class);
 			packet.readFromStream(reader);
 		} catch (Exception e) {
-			// TODO: Handle bean not being found
+			// TODO: Handle packet bean not being found
+			e.printStackTrace();
 		}
 		
 		return packet;
