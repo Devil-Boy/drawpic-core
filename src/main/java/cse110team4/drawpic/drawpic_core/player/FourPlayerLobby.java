@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core.lobby;
+package cse110team4.drawpic.drawpic_core.player;
 
 import java.util.ArrayList;
 import java.util.List;

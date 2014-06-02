@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core.lobby;
+package cse110team4.drawpic.drawpic_core.player;
 
 import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;

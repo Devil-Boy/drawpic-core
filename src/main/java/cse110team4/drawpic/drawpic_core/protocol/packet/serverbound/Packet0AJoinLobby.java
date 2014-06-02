@@ -1,6 +1,6 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet.serverbound;
 
-import cse110team4.drawpic.drawpic_core.lobby.Lobby;
+import cse110team4.drawpic.drawpic_core.player.Lobby;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;

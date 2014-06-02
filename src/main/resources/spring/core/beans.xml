@@ -10,7 +10,7 @@
 	<import resource="jms.xml" />
 
 	<bean id="defaultNormalLobbySettings"
-		class="cse110team4.drawpic.drawpic_core.lobby.NormalLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.player.NormalLobbySettings"
 		scope="prototype">
 		<property name="judging" value="RANDOM"></property>
 		<property name="rounds" value="3"></property>
@@ -19,12 +19,12 @@
 	</bean>
 
 	<bean id="emptyNormalLobbySettings"
-		class="cse110team4.drawpic.drawpic_core.lobby.NormalLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.player.NormalLobbySettings"
 		scope="prototype">
 	</bean>
 
 	<bean id="defaultFourPlayerLobby"
-		class="cse110team4.drawpic.drawpic_core.lobby.FourPlayerLobby"
+		class="cse110team4.drawpic.drawpic_core.player.FourPlayerLobby"
 		scope="prototype">
 		<property name="settings" ref="defaultNormalLobbySettings"></property>
 		<constructor-arg>
@@ -36,10 +36,10 @@
 
 
 	<bean id="lobbyParser"
-		class="cse110team4.drawpic.drawpic_core.lobby.LobbyParser">
+		class="cse110team4.drawpic.drawpic_core.player.LobbyParser">
 	</bean>
 	<bean id="lobbySettingsParser"
-		class="cse110team4.drawpic.drawpic_core.lobby.LobbySettingsParser">
+		class="cse110team4.drawpic.drawpic_core.player.LobbySettingsParser">
 	</bean>
 	<bean id="jmsStreamReader"
 		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader">
@@ -69,9 +69,14 @@
 	
 	
 	<bean id="correlationIDGenerator"
-		class="cse110team4.drawpic.drawpic_core.protocol.CorrelationIDGenerator">
+		class="cse110team4.drawpic.drawpic_core.protocol.CorrelationIDGenerator"
+		scope="singleton">
 		<constructor-arg>
 			<bean class="java.util.Random"></bean>
 		</constructor-arg>
+	</bean>
+	<bean id="clientData"
+		class="cse110team4.drawpic.drawpic_core.player.ClientData"
+		scope="prototype">
 	</bean>
 </beans>

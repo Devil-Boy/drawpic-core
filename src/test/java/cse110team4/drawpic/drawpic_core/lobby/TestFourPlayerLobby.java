@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import cse110team4.drawpic.drawpic_core.CoreBeans;
-import cse110team4.drawpic.drawpic_core.lobby.FourPlayerLobby;
+import cse110team4.drawpic.drawpic_core.player.FourPlayerLobby;
 
 public class TestFourPlayerLobby {
 
