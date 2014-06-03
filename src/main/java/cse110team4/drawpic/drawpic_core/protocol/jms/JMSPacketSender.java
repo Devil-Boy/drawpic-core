@@ -18,27 +18,25 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.PacketSender;
 public class JMSPacketSender implements PacketSender {
 	
 	private Session session;
-	private Destination sendTo;
-	private MessageProducer sender;
+	private MessageProducer producer;
 	private Destination replyTo;
 	
 	private JMSStreamWriter writer;
 	
 	/**
-	 * Creates a new instance of this class that will send messages to the given destination
-	 * @param session The session to send messages through
-	 * @param sendTo Where to send messages to
-	 * @throws JMSException if there is an issue with initialization
+	 * Creates a new instance of this class that will send messages
 	 */
-	public JMSPacketSender(Session session, Destination sendTo) throws JMSException {
+	public JMSPacketSender(Session session, JMSStreamWriter writer) {
 		this.session = session;
-		this.sendTo = sendTo;
-		
-		// Create the message writer
-		writer = new JMSStreamWriter();
-		
-		// Prepare the message sender
-		sender = session.createProducer(sendTo);
+		this.writer = writer;
+	}
+	
+	public MessageProducer getProducer() {
+		return producer;
+	}
+
+	public void setProducer(MessageProducer producer) {
+		this.producer = producer;
 	}
 
 	@Override
@@ -61,7 +59,7 @@ public class JMSPacketSender implements PacketSender {
 		}
 		
 		// Send the packet off
-		sender.send(message);
+		producer.send(message);
 	}
 
 	/**

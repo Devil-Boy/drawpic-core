@@ -19,6 +19,7 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.PacketReceiver;
  *
  * @author Devil Boy (Kervin Sam)
  *
+ *@category Dependency Inversion Principle
  */
 public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	

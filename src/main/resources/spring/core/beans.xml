@@ -45,19 +45,6 @@
 		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser"
 		scope="singleton">
 	</bean>
-	<util:constant id="activeMQURL"
-		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.ACTIVEMQ_URL" />
-
-	<util:constant id="activeMQUsername"
-		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.USERNAME" />
-	<util:constant
-		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.PASSWORD"
-		id="activeMQPassword" />
-	<util:constant
-		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.SERVER_QUEUE"
-		id="activeMQServerQueue" />
-	
-	
 	<bean id="correlationIDGenerator"
 		class="cse110team4.drawpic.drawpic_core.protocol.CorrelationIDGenerator"
 		scope="singleton">
