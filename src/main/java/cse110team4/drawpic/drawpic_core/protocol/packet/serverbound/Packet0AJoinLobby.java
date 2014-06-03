@@ -37,10 +37,19 @@ public class Packet0AJoinLobby extends Packet{
 	}
 	
 	/**
-	 * Gets lobby
+	 * Gets lobby object
+	 * @return A Lobby
 	 */
 	public Lobby getLobby(){
 		return this.lobby;
+	}
+	
+	/**
+	 * Gets the host of the joined lobby
+	 * @return The String name of the lobby host
+	 */
+	public String getLobbyHost() {
+		return this.lobby.getHost();
 	}
 	
 	@Override
