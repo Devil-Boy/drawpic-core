@@ -22,10 +22,6 @@ public class Packet09LobbyList extends Packet{
 
 	final static byte LOBBY_LIST = 0x09;
 	private List<Lobby> lobbies;
-	
-	public List<Lobby> getLobbies() {
-		return lobbies;
-	}
 
 	/**
 	 * Default constructor
@@ -37,6 +33,10 @@ public class Packet09LobbyList extends Packet{
 	public Packet09LobbyList(List<Lobby> lobbies){
 		super(LOBBY_LIST);
 		this.lobbies = lobbies;
+	}
+	
+	public List<Lobby> getLobbies() {
+		return lobbies;
 	}
 		
 	@Override

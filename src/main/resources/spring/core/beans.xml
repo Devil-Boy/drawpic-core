@@ -35,16 +35,22 @@
 	</bean>
 
 
+	<bean id="emptyFourPlayerLobby"
+		class="cse110team4.drawpic.drawpic_core.player.FourPlayerLobby">
+	</bean>
 	<bean id="lobbyParser"
 		class="cse110team4.drawpic.drawpic_core.player.LobbyParser">
 	</bean>
+	
 	<bean id="lobbySettingsParser"
 		class="cse110team4.drawpic.drawpic_core.player.LobbySettingsParser">
 	</bean>
+	
 	<bean id="packetParser"
 		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser"
 		scope="singleton">
 	</bean>
+	
 	<bean id="correlationIDGenerator"
 		class="cse110team4.drawpic.drawpic_core.protocol.CorrelationIDGenerator"
 		scope="singleton">
@@ -52,8 +58,10 @@
 			<bean class="java.util.Random"></bean>
 		</constructor-arg>
 	</bean>
+	
 	<bean id="clientData"
 		class="cse110team4.drawpic.drawpic_core.player.ClientData"
 		scope="prototype">
 	</bean>
+	
 </beans>

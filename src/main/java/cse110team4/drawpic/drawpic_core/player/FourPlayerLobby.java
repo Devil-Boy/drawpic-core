@@ -23,6 +23,9 @@ public class FourPlayerLobby extends Lobby {
 	 */
 	private List<String> players;
 	
+	public FourPlayerLobby() {
+	}
+	
 	/**
 	 * Constructs this object, passing in the internal list to use
 	 */
@@ -102,7 +105,7 @@ public class FourPlayerLobby extends Lobby {
 	}
 
 	@Override
-	public void readFromStream(StreamReader reader) throws StreamReadException {
+	public void readLobbyFromStream(StreamReader reader) throws StreamReadException {
 		String[] receivedPlayers = new String[4];
 		reader.readStrings(receivedPlayers);
 		

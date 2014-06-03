@@ -1,6 +1,5 @@
 package cse110team4.drawpic.drawpic_core.player;
 
-import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
@@ -104,4 +103,13 @@ public abstract class Lobby implements Streamable {
 	 * @throws StreamWriteException if there was a write error
 	 */
 	public abstract void writeLobbyToStream(StreamWriter writer) throws StreamWriteException;
+	
+	@Override
+	public void readFromStream(StreamReader reader) throws StreamReadException {
+		settings = LobbySettingsParser.fromStream(reader);
+		
+		readLobbyFromStream(reader);
+	}
+	
+	public abstract void readLobbyFromStream(StreamReader reader) throws StreamReadException;
 }
