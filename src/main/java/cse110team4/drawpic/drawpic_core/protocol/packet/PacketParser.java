@@ -25,7 +25,7 @@ public class PacketParser {
 		
 		Packet packet = null;
 		try {
-			packet = CoreBeans.getContext().getBean("emptyPacket" + idToHexString(id), Packet.class);
+			packet = CoreBeans.getContext().getBean("emptyPacket" + idToHexString(id).toUpperCase(), Packet.class);
 			packet.readFromStream(reader);
 		} catch (Exception e) {
 			// TODO: Handle packet bean not being found
