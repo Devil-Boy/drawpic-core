@@ -34,6 +34,13 @@ public class Packet0AJoinLobby extends Packet{
 		this.lobby = lobby;
 	}
 	
+	/**
+	 * Gets lobby
+	 */
+	public Lobby getLobby(){
+		return this.lobby;
+	}
+	
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
 		// Not needed
