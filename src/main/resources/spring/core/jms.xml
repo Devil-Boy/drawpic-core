@@ -31,18 +31,22 @@
 	<constructor-arg type="int" value="javax.jms.Session.AUTO_ACKNOWLEDGE">
 	</constructor-arg>
 	</bean>
+	
 	<bean id="jmsPacketSender"
 		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSPacketSender"
 		scope="prototype">
 	<constructor-arg ref="activeMQSession"></constructor-arg>
 	<constructor-arg ref="jmsStreamWriter"></constructor-arg>
 	</bean>
+	
 	<bean id="jmsStreamWriter"
 		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamWriter"
 		scope="prototype">
 	</bean>
+	
 	<bean id="jmsStreamReader"
 		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader"
 		scope="prototype">
 	</bean>
+	
 </beans>
