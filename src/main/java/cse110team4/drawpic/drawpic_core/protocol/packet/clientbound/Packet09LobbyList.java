@@ -1,12 +1,11 @@
-/**
- * 
- */
 package cse110team4.drawpic.drawpic_core.protocol.packet.clientbound;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.player.Lobby;
+import cse110team4.drawpic.drawpic_core.player.LobbyParser;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
@@ -38,12 +37,16 @@ public class Packet09LobbyList extends Packet{
 	
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		//Lobby lobby = new Lobby();
-		
+		int numLobbies = reader.readInt();
+		LobbyParser parser = CoreBeans.getContext().getBean("lobbyParser", LobbyParser.class);
+		for(int i = 0; i < numLobbies; i++) {
+			lobbies.add(parser.fromStream(reader));
+		}
 	}
 
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
+		writer.writeInt(lobbies.size());
 		for(Lobby lobby : lobbies){
 			lobby.writeToStream(writer);
 		}
