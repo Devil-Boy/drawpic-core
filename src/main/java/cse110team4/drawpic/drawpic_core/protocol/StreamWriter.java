@@ -7,7 +7,7 @@ package cse110team4.drawpic.drawpic_core.protocol;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public interface  StreamWriter {
+public interface StreamWriter {
 
 	/**
 	 * Writes a boolean to the stream
