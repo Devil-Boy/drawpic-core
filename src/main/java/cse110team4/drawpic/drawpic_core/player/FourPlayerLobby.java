@@ -110,6 +110,12 @@ public class FourPlayerLobby extends Lobby {
 		String[] receivedPlayers = new String[4];
 		reader.readStrings(receivedPlayers);
 		
-		players = new ArrayList<String>(Arrays.asList(receivedPlayers));
+		players = new ArrayList<String>(receivedPlayers.length);
+		
+		for (String player : receivedPlayers) {
+			if (player != null) {
+				players.add(player);
+			}
+		}
 	}
 }
