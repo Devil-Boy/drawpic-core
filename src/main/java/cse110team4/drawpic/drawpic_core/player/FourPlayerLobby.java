@@ -1,6 +1,7 @@
 package cse110team4.drawpic.drawpic_core.player;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
@@ -109,9 +110,6 @@ public class FourPlayerLobby extends Lobby {
 		String[] receivedPlayers = new String[4];
 		reader.readStrings(receivedPlayers);
 		
-		players = new ArrayList<String>(MAX_PLAYERS);
-		for (int i=0; i < receivedPlayers.length; i++) {
-			players.set(i, receivedPlayers[i]);
-		}
+		players = new ArrayList<String>(Arrays.asList(receivedPlayers));
 	}
 }
