@@ -36,7 +36,8 @@
 
 
 	<bean id="emptyFourPlayerLobby"
-		class="cse110team4.drawpic.drawpic_core.player.FourPlayerLobby">
+		class="cse110team4.drawpic.drawpic_core.player.FourPlayerLobby"
+		scope="prototype">
 	</bean>
 	<bean id="lobbyParser"
 		class="cse110team4.drawpic.drawpic_core.player.LobbyParser">
