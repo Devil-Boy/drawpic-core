@@ -14,8 +14,8 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 public class Packet0BPlayerJoined extends Packet {
 
 	final static byte PLAYER_JOINED= 0x0B;
-	String username;
-	
+	private String username;
+
 	/**
 	 * Default no arg constructor
 	 * 
@@ -32,6 +32,10 @@ public class Packet0BPlayerJoined extends Packet {
 		super(PLAYER_JOINED);
 		
 		this.username = username;
+	}
+	
+	public String getUsername() {
+		return username;
 	}
 	
 	@Override
