@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core.lobby;
+package cse110team4.drawpic.drawpic_core.player;
 
 import static org.junit.Assert.*;
 
@@ -85,5 +85,5 @@ public class TestFourPlayerLobby {
 		lob.addPlayer("Bert");
 		assertEquals("Bob",lob.getHost());
 	}
-		
+
 }

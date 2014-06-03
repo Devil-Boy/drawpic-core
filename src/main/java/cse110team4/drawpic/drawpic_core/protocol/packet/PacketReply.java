@@ -23,11 +23,11 @@ public class PacketReply<T extends Packet> implements Future<T>, PacketHandler {
 	
 	private boolean oneShot;
 
-	private PacketReceiver receiver;
+	private PacketDistributor receiver;
 	private byte packetType;
 	private String correlationID;
 	
-	public PacketReply(PacketReceiver receiver, byte packetType, String correlationID) {
+	public PacketReply(PacketDistributor receiver, byte packetType, String correlationID) {
 		this.oneShot = true;
 		this.receiver = receiver;
 		this.packetType = packetType;

@@ -5,24 +5,54 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
+	<util:constant id="activeMQURL"
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.ACTIVEMQ_URL" />
 
-	<bean id="jmsStreamReader"
-		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader"
-		scope="prototype">
+	<util:constant id="activeMQUsername"
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.USERNAME" />
+	<util:constant
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.PASSWORD"
+		id="activeMQPassword" />
+	<util:constant
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.SERVER_QUEUE"
+		id="activeMQServerQueue" />
+
+	<bean id="activeMQConnection"
+		class="org.apache.activemq.ActiveMQConnection"
+		factory-method="makeConnection" scope="singleton">
+		<constructor-arg ref="activeMQUsername"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg ref="activeMQPassword"
+			type="java.lang.String">
+		</constructor-arg>
+		<constructor-arg ref="activeMQURL" type="java.lang.String"></constructor-arg>
 	</bean>
+	<bean id="activeMQSession" class="javax.jms.Session"
+		scope="singleton" factory-bean="activeMQConnection"
+		factory-method="createSession">
+	<constructor-arg value="false" type="boolean"></constructor-arg>
+	
+	<constructor-arg>
+		<util:constant static-field="javax.jms.Session.AUTO_ACKNOWLEDGE" />
+	</constructor-arg>
+	</bean>
+
+	<bean id="jmsPacketSender"
+		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSPacketSender"
+		scope="prototype">
+	<constructor-arg ref="activeMQSession"></constructor-arg>
+	<constructor-arg ref="jmsStreamWriter"></constructor-arg>
+	</bean>
+	
 	<bean id="jmsStreamWriter"
 		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamWriter"
 		scope="prototype">
 	</bean>
-
-	<bean id="jmsPacketReceiver"
-		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSPacketReceiver"
+	
+	<bean id="jmsStreamReader"
+		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader"
 		scope="prototype">
-	<constructor-arg ref="jmsStreamReader"></constructor-arg>
-	<constructor-arg>
-		<util:list value-type="cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler"
-				list-class="java.util.ArrayList">
-		</util:list>
-	</constructor-arg>
 	</bean>
+	
 </beans>
