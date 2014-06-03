@@ -23,6 +23,10 @@ public class Packet09LobbyList extends Packet{
 	final static byte LOBBY_LIST = 0x09;
 	private List<Lobby> lobbies;
 	
+	public List<Lobby> getLobbies() {
+		return lobbies;
+	}
+
 	/**
 	 * Default constructor
 	 */
@@ -34,7 +38,7 @@ public class Packet09LobbyList extends Packet{
 		super(LOBBY_LIST);
 		this.lobbies = lobbies;
 	}
-	
+		
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
 		int numLobbies = reader.readInt();
