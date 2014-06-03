@@ -1,7 +1,6 @@
 package cse110team4.drawpic.drawpic_core.protocol.jms;
 
 import javax.jms.JMSException;
-import javax.jms.StreamMessage;
 
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
@@ -13,14 +12,6 @@ public class JMSStreamReader extends JMSStreamHandler implements StreamReader {
 	 */
 	public JMSStreamReader() {
 		super();
-	}
-	
-	/**
-	 * Constructs this with an initial message to read from
-	 * @param message The message to be read from
-	 */
-	public JMSStreamReader(StreamMessage message) {
-		super(message);
 	}
 
 	@Override

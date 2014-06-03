@@ -15,14 +15,6 @@ public class JMSStreamWriter extends JMSStreamHandler implements StreamWriter {
 		super();
 	}
 	
-	/**
-	 * Constructs this writer with an initial message to write to
-	 * @param message The message to write to
-	 */
-	public JMSStreamWriter(StreamMessage message) {
-		super(message);
-	}
-	
 	@Override
 	public void writeBoolean(boolean value) throws StreamWriteException {
 		try {

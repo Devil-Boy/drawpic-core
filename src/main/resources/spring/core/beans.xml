@@ -41,16 +41,6 @@
 	<bean id="lobbySettingsParser"
 		class="cse110team4.drawpic.drawpic_core.player.LobbySettingsParser">
 	</bean>
-	<bean id="jmsStreamReader"
-		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader">
-	</bean>
-	
-	
-	<bean id="jmsStreamWriter"
-		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamWriter">
-	</bean>
-	
-	
 	<bean id="packetParser"
 		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser"
 		scope="singleton">

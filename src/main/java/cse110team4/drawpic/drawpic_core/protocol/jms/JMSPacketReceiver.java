@@ -1,14 +1,10 @@
 package cse110team4.drawpic.drawpic_core.protocol.jms;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.jms.Destination;
 import javax.jms.JMSException;
 import javax.jms.Message;
-import javax.jms.MessageConsumer;
 import javax.jms.MessageListener;
-import javax.jms.Session;
 import javax.jms.StreamMessage;
 
 import cse110team4.drawpic.drawpic_core.CoreBeans;
@@ -26,32 +22,15 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.PacketReceiver;
  */
 public class JMSPacketReceiver implements PacketReceiver, MessageListener {
 	
-	private Session session;
-	private Destination receiveFrom;
-	private MessageConsumer receiver;
-	
 	private JMSStreamReader reader;
 	private List<PacketHandler> handlers;
 
 	/**
-	 * Creates a new instance of this class that receives messages from the specified destination
-	 * @param session The session to receive messages from
-	 * @param receiveFrom The destination to receive message from
-	 * @throws JMSException if there is an error in initialization
+	 * Creates a new instance of this class
 	 */
-	public JMSPacketReceiver(Session session, Destination receiveFrom) throws JMSException {
-		this.session = session;
-		this.receiveFrom = receiveFrom;
-		
-		// Set up packet parsing
-		this.reader = new JMSStreamReader();
-		
-		// Initialize the handler list
-		handlers = new ArrayList<PacketHandler>();
-		
-		// Start receiving messages
-		receiver = session.createConsumer(receiveFrom);
-		receiver.setMessageListener(this);
+	public JMSPacketReceiver(JMSStreamReader reader, List<PacketHandler> handlers) {
+		this.reader = reader;
+		this.handlers = handlers;
 	}
 	
 	@Override
