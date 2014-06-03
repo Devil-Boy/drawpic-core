@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+
+	<import resource="packets.xml" />
+	<import resource="jms.xml" />
+
+	<bean id="defaultNormalLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.player.NormalLobbySettings"
+		scope="prototype">
+		<property name="judging" value="RANDOM"></property>
+		<property name="rounds" value="3"></property>
+		<property name="maxWins" value="3"></property>
+		<property name="drawTime" value="60"></property>
+	</bean>
+
+	<bean id="emptyNormalLobbySettings"
+		class="cse110team4.drawpic.drawpic_core.player.NormalLobbySettings"
+		scope="prototype">
+	</bean>
+
+	<bean id="defaultFourPlayerLobby"
+		class="cse110team4.drawpic.drawpic_core.player.FourPlayerLobby"
+		scope="prototype">
+		<property name="settings" ref="defaultNormalLobbySettings"></property>
+		<constructor-arg>
+			<util:list value-type="java.lang.String"
+				list-class="java.util.ArrayList">
+			</util:list>
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="lobbyParser"
+		class="cse110team4.drawpic.drawpic_core.player.LobbyParser">
+	</bean>
+	<bean id="lobbySettingsParser"
+		class="cse110team4.drawpic.drawpic_core.player.LobbySettingsParser">
+	</bean>
+	<bean id="packetParser"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser"
+		scope="singleton">
+	</bean>
+	<util:constant id="activeMQURL"
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.ACTIVEMQ_URL" />
+
+	<util:constant id="activeMQUsername"
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.USERNAME" />
+	<util:constant
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.PASSWORD"
+		id="activeMQPassword" />
+	<util:constant
+		static-field="cse110team4.drawpic.drawpic_core.ActiveMQConstants.SERVER_QUEUE"
+		id="activeMQServerQueue" />
+	
+	
+	<bean id="correlationIDGenerator"
+		class="cse110team4.drawpic.drawpic_core.protocol.CorrelationIDGenerator"
+		scope="singleton">
+		<constructor-arg>
+			<bean class="java.util.Random"></bean>
+		</constructor-arg>
+	</bean>
+	<bean id="clientData"
+		class="cse110team4.drawpic.drawpic_core.player.ClientData"
+		scope="prototype">
+	</bean>
+</beans>

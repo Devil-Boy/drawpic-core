@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean name="emptyPacket01"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet01Connect"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket02"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet02Login"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket03"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet03Response"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket04"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04LobbyOption"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket05"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet05Lobby"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket06"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet06Disconnect"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket07"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet07CreateLobby"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket08"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet08GetLobbies"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket09"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet09LobbyList"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket0A"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0AJoinLobby"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket0B"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0BPlayerJoined"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket0C"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0CLeaveLobby"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket0D"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0DPlayerLeft"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket0E"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0ELobbySettings"
+		scope="prototype">
+	</bean>
+	<bean name="emptyPacket0F"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0FStartGame"
+		scope="prototype">
+	</bean>
+</beans>
