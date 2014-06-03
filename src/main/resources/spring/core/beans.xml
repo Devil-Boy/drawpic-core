@@ -56,13 +56,4 @@
 		class="cse110team4.drawpic.drawpic_core.player.ClientData"
 		scope="prototype">
 	</bean>
-	<bean id="packetDistributor"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketDistributor"
-		scope="prototype">
-	<constructor-arg>
-		<util:list value-type="cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler"
-				list-class="java.util.ArrayList">
-		</util:list>
-	</constructor-arg>
-	</bean>
 </beans>
