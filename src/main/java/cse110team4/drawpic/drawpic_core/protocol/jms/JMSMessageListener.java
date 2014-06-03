@@ -16,11 +16,11 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser;
  * 
  * @category Dependency Inversion Principle
  */
-public abstract class JMSServerMessageListener implements MessageListener {
+public abstract class JMSMessageListener implements MessageListener {
 	
 	private JMSStreamReader reader;
 	
-	public JMSServerMessageListener(JMSStreamReader reader) {
+	public JMSMessageListener(JMSStreamReader reader) {
 		this.reader = reader;
 	}
 
