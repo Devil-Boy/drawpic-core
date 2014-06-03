@@ -45,13 +45,4 @@
 		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader"
 		scope="prototype">
 	</bean>
-	<bean id="jmsPacketReceiver"
-		class="cse110team4.drawpic.drawpic_core.protocol.jms.JMSPacketReceiver">
-	<constructor-arg ref="jmsStreamReader"></constructor-arg>
-	<constructor-arg>
-		<util:list value-type="cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler"
-				list-class="java.util.ArrayList">
-		</util:list>
-	</constructor-arg>
-	</bean>
 </beans>
