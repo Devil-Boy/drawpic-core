@@ -5,7 +5,7 @@
 
 
 	<bean name="emptyPacket01"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet01Connect"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet01Connect"
 		scope="prototype">
 	</bean>
 	<bean name="emptyPacket02"

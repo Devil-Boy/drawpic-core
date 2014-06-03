@@ -1,4 +1,4 @@
-package cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional;
+package cse110team4.drawpic.drawpic_core.protocol.packet.serverbound;
 
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
