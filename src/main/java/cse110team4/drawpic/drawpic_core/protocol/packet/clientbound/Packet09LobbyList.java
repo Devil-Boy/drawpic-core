@@ -41,6 +41,7 @@ public class Packet09LobbyList extends Packet{
 		
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
+		this.lobbies = new ArrayList<Lobby>();
 		int numLobbies = reader.readInt();
 		LobbyParser parser = CoreBeans.getContext().getBean("lobbyParser", LobbyParser.class);
 		for(int i = 0; i < numLobbies; i++) {
