@@ -15,13 +15,17 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 public class Packet0ELobbySettings extends Packet {
 
 	final static byte LOBBY_SETTINGS = 0x0E;
-	LobbySettings settings;
+	private LobbySettings settings;
 	
 	/**
 	 * Default constructor
 	 */
 	public Packet0ELobbySettings() {
 		super(LOBBY_SETTINGS);
+	}
+	
+	public LobbySettings getSetting() {
+		return settings;
 	}
 
 	/**
