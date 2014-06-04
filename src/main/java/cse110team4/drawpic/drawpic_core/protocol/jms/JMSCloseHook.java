@@ -1,7 +1,10 @@
 package cse110team4.drawpic.drawpic_core.protocol.jms;
 
 import javax.jms.JMSException;
+
 import org.apache.activemq.ActiveMQConnection;
+
+import cse110team4.drawpic.drawpic_core.CoreBeans;
 
 
 /**
@@ -9,22 +12,12 @@ import org.apache.activemq.ActiveMQConnection;
  * @author Prof Mennerini
  *
  */
-public class JMSCloseHook extends Thread {
-	ActiveMQConnection connection;
-	private JMSCloseHook(ActiveMQConnection connection) {
-		this.connection = connection;
-	}
-	
-	public static Thread registerCloseHook(ActiveMQConnection connection) {
-		Thread ret = new JMSCloseHook(connection);
-		Runtime.getRuntime().addShutdownHook(ret);
-		return ret;
-	}
+public class JMSCloseHook implements Runnable {
 	
 	public void run() {
 		try {
 			System.out.println("Closing ActiveMQ connection");
-			connection.close();
+			CoreBeans.getContext().getBean("activeMQConnection", ActiveMQConnection.class).close();
 		} catch (JMSException e) {
 			/* 
 			 * This means that the connection was already closed or got 
