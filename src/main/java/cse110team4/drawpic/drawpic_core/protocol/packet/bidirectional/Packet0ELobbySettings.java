@@ -24,7 +24,7 @@ public class Packet0ELobbySettings extends Packet {
 		super(LOBBY_SETTINGS);
 	}
 	
-	public LobbySettings getSetting() {
+	public LobbySettings getSettings() {
 		return settings;
 	}
 
