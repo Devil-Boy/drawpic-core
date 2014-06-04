@@ -6,78 +6,119 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
 
 
-	<bean name="emptyPacket01"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet01Connect"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket02"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet02Login"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket03"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet03Response"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket04"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04KickLobby"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket05"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet05Lobby"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket06"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet06Disconnect"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket07"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet07CreateLobby"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket08"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet08GetLobbies"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket09"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet09LobbyList"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket0A"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0AJoinLobby"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket0B"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0BPlayerJoined"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket0C"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0CLeaveLobby"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket0D"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0DPlayerLeft"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket0E"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0ELobbySettings"
-		scope="prototype">
-	</bean>
-	<bean name="emptyPacket0F"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0FStartGame"
-		scope="prototype">
-	</bean>
 	
 	<bean id="packetDistributor"
 		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketDistributor"
 		scope="prototype">
 		<constructor-arg>
-			<util:list value-type="cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler"
-					list-class="java.util.ArrayList">
+			<util:list value-type="cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler" list-class="java.util.ArrayList">
 			</util:list>
 		</constructor-arg>
 	</bean>
+	<bean name="emptyPacket01"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet01Connect"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket02"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet02Login"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket03"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet03Response"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket04"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04KickLobby"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket05"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet05Lobby"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket06"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet06Disconnect"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket07"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet07CreateLobby"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket08"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet08GetLobbies"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket09"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet09LobbyList"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket0A"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0AJoinLobby"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket0B"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0BPlayerJoined"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket0C"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0CLeaveLobby"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket0D"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0DPlayerLeft"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket0E"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0ELobbySettings"
+		scope="prototype">
+	</bean>
+	
+	
+	<bean name="emptyPacket0F"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0FStartGame"
+		scope="prototype">
+	</bean>
+	
+	
+	
 	<bean
 		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet10SetJudge"
 		name="emptyPacket10">
 	</bean>
+	
+	<bean id="emptyPacket11"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet11PhraseCombo">
+	</bean>
+	
+	
+	
+	<bean id="emptyPacket12"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet12GamePhase">
+	</bean>
+	
 </beans>
