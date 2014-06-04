@@ -1,0 +1,951 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.5" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="cse110team4.drawpic.drawpic_core.drawing.Pen" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/drawing/Pen.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="770" y="177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="cse110team4.drawpic.drawpic_core.drawing.Eraser" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/drawing/Eraser.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="522" y="146"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="cse110team4.drawpic.drawpic_core.drawing.Blot" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/drawing/Blot.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="995" y="148"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="cse110team4.drawpic.drawpic_core.drawing.Location" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/drawing/Location.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1169" y="397"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="cse110team4.drawpic.drawpic_core.drawing.Canvas" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/drawing/Canvas.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="827" y="-180"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="cse110team4.drawpic.drawpic_core.drawing.Step" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/drawing/Step.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="820" y="-28"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="cse110team4.drawpic.drawpic_core.drawing.Line" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/drawing/Line.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1235" y="158"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="cse110team4.drawpic.drawpic_core.ActiveMQConstants" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/ActiveMQConstants.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1116" y="-174"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="cse110team4.drawpic.drawpic_core.CoreBeans" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/CoreBeans.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1312" y="-168"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="cse110team4.drawpic.drawpic_core.CloseHook" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/CloseHook.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1516" y="-170"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.DrawingPhase" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/DrawingPhase.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-488" y="-198"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.Round" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/Round.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="20" y="-198"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="13" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.GamePhase" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/GamePhase.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-234" y="-50"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="14" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.Judge" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/Judge.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="20" y="-68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.Session" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/Session.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="274" y="-198"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.JudgingPhase" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/JudgingPhase.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-234" y="-198"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.ResultsPhase" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/ResultsPhase.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="526" y="-199"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="cse110team4.drawpic.drawpic_core.gamesession.Artist" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/gamesession/Artist.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="274" y="-68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="cse110team4.drawpic.drawpic_core.player.NormalLobbySettings" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/NormalLobbySettings.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-337" y="903"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="cse110team4.drawpic.drawpic_core.player.LobbySettingsParser" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/LobbySettingsParser.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-466" y="117"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="cse110team4.drawpic.drawpic_core.player.ClientData" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/ClientData.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-231" y="155"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="cse110team4.drawpic.drawpic_core.player.LobbyParser" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/LobbyParser.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-13" y="119"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="23" language="java" name="cse110team4.drawpic.drawpic_core.player.NormalLobbySettings.JudgeSetting" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/NormalLobbySettings.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-339" y="1168"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="24" language="java" name="cse110team4.drawpic.drawpic_core.player.LobbySettings" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/LobbySettings.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-336" y="665"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="cse110team4.drawpic.drawpic_core.player.Lobby" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/Lobby.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-226" y="408"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="cse110team4.drawpic.drawpic_core.player.FourPlayerLobby" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/player/FourPlayerLobby.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-63" y="758"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="cse110team4.drawpic.drawpic_core.protocol.StreamReader" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/StreamReader.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="268" y="537"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="28" language="java" name="cse110team4.drawpic.drawpic_core.protocol.Streamable" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/Streamable.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="507" y="456"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="29" language="java" name="cse110team4.drawpic.drawpic_core.protocol.StreamWriter" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/StreamWriter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="715" y="538"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="30" language="java" name="cse110team4.drawpic.drawpic_core.protocol.CorrelationIDGenerator" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/CorrelationIDGenerator.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="507" y="573"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="cse110team4.drawpic.drawpic_core.protocol.StreamWriteException" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/StreamWriteException.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="918" y="458"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="cse110team4.drawpic.drawpic_core.protocol.StreamReadException" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/StreamReadException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="918" y="566"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamReader" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/jms/JMSStreamReader.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="973" y="1338"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="cse110team4.drawpic.drawpic_core.protocol.jms.JMSCloseHook" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/jms/JMSCloseHook.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="215" y="998"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamHandler" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/jms/JMSStreamHandler.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="730" y="1024"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="cse110team4.drawpic.drawpic_core.protocol.jms.JMSPacketSender" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/jms/JMSPacketSender.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="465" y="1063"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="cse110team4.drawpic.drawpic_core.protocol.jms.JMSStreamWriter" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/jms/JMSStreamWriter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="720" y="1332"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="cse110team4.drawpic.drawpic_core.protocol.jms.JMSMessageListener" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/jms/JMSMessageListener.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="972" y="1007"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.PacketDistributor" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/PacketDistributor.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1741" y="1163"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.Packet" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/Packet.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1736" y="975"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/PacketParser.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1225" y="1007"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="42" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.PacketHandler" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/PacketHandler.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1821" y="1328"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="43" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.PacketReply" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/PacketReply.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1983" y="1019"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="44" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.PacketSender" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/PacketSender.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1228" y="1118"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <enumeration id="45" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.PacketReply.State" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/PacketReply.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2059" y="1255"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="46" language="java" 
+    name="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0ELobbySettings" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/bidirectional/Packet0ELobbySettings.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1118" y="728"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional.Packet0FStartGame" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/bidirectional/Packet0FStartGame.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1408" y="713"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet05Lobby" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/clientbound/Packet05Lobby.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1544" y="444"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" 
+    name="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0BPlayerJoined" project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/clientbound/Packet0BPlayerJoined.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2170" y="462"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet09LobbyList" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/clientbound/Packet09LobbyList.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1857" y="453"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet0DPlayerLeft" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/clientbound/Packet0DPlayerLeft.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2784" y="454"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="52" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet03Response" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/clientbound/Packet03Response.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2471" y="481"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="53" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0AJoinLobby" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet0AJoinLobby.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1865" y="204"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet02Login" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet02Login.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1547" y="204"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="55" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet01Connect" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet01Connect.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2183" y="177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="56" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet0CLeaveLobby" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet0CLeaveLobby.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2501" y="177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="57" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04KickLobby" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet04KickLobby.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2819" y="195"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="58" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet07CreateLobby" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet07CreateLobby.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3137" y="177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="59" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet08GetLobbies" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet08GetLobbies.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3773" y="177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="60" language="java" name="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet06Disconnect" 
+    project="drawpic-core" 
+    file="/drawpic-core/src/main/java/cse110team4/drawpic/drawpic_core/protocol/packet/serverbound/Packet06Disconnect.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3455" y="177"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" accessors="true" 
+      visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="61">    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="62" name="lobby"/>      
+      <multiplicity id="63" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="64">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="65" name="state"/>      
+      <multiplicity id="66" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="68" name="phase"/>      
+      <multiplicity id="69" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="70">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="71">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="72">    
+    <end type="SOURCE" refId="58"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="73">    
+    <end type="SOURCE" refId="53"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="74">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="75">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="76" name="artists"/>      
+      <multiplicity id="77" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="78">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="79">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="81">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="82" name="judging"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="85" name="judge"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="87">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="23"/>  
+  </nesting>  
+  <association id="88">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="89" name="location"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="92" name="handlers"/>      
+      <multiplicity id="93" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="42" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="95" name="end"/>      
+      <multiplicity id="96" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="97">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <generalization id="98">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="25"/>  
+  </generalization>  
+  <realization id="99">    
+    <bendpoint x="1878" y="1208"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="42"/>  
+  </realization>  
+  <generalization id="100">    
+    <end type="SOURCE" refId="57"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="101">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="102" name="settings"/>      
+      <multiplicity id="103" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="104">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <generalization id="105">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="106">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <realization id="107">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <generalization id="108">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="109">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="110" name="steps"/>      
+      <multiplicity id="111" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="112">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="113">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="114">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="115">    
+    <end type="SOURCE" refId="46" navigable="false">      
+      <attribute id="116" name="settings"/>      
+      <multiplicity id="117" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="118">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <generalization id="119">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <realization id="120">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="44"/>  
+  </realization>  
+  <association id="121">    
+    <end type="SOURCE" refId="53" navigable="false">      
+      <attribute id="122" name="lobby"/>      
+      <multiplicity id="123" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="124">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="125" name="lobbies"/>      
+      <multiplicity id="126" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="127">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <association id="128">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="129" name="reply"/>      
+      <multiplicity id="130" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="131">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="29"/>  
+  </realization>  
+  <generalization id="132">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="35"/>  
+  </generalization>  
+  <generalization id="133">    
+    <end type="SOURCE" refId="56"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="134">    
+    <end type="SOURCE" refId="48" navigable="false">      
+      <attribute id="135" name="lobby"/>      
+      <multiplicity id="136" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="137">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="138" name="start"/>      
+      <multiplicity id="139" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="140">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="141">    
+    <end type="SOURCE" refId="60"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="142">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="143" name="writer"/>      
+      <multiplicity id="144" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="145">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="45"/>  
+  </nesting>  
+  <generalization id="146">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="147">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="148">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="149" name="receiver"/>      
+      <multiplicity id="150" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="151">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="28"/>  
+  </realization>  
+  <association id="152">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="153" name="reader"/>      
+      <multiplicity id="154" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="155">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="156" name="canvas"/>      
+      <multiplicity id="157" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
