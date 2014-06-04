@@ -67,4 +67,7 @@
 		scope="prototype">
 	</bean>
 	
+	<bean id="gameData" scope="prototype"
+		class="cse110team4.drawpic.drawpic_core.player.GameData">
+	</bean>
 </beans>
