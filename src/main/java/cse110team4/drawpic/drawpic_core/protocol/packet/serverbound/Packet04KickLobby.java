@@ -14,6 +14,8 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  */
 public class Packet04KickLobby extends Packet {
 	final static byte LOGIN_ID = 0x04;
+	
+	private String reason;
 
 	/**
 	 * Constructor that doesn't set any initial values
@@ -21,15 +23,20 @@ public class Packet04KickLobby extends Packet {
 	public Packet04KickLobby() {
 		super(LOGIN_ID);
 	}
+	
+	public Packet04KickLobby(String r) {
+		super(LOGIN_ID);
+		reason = r;
+	}
 
 	
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
-		//nothing
+		writer.writeString(reason);
 	}
 
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		//not needed - Kirk 2014
+		reader.readString();
 	}
 }
