@@ -76,4 +76,8 @@
 			</util:list>
 		</constructor-arg>
 	</bean>
+	<bean
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.clientbound.Packet10SetJudge"
+		name="emptyPacket10">
+	</bean>
 </beans>
