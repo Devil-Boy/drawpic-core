@@ -122,7 +122,7 @@ public class NormalLobbySettings extends LobbySettings {
 		NormalLobbySettings settings = new NormalLobbySettings();
 		settings.setJudging(judging);
 		settings.setDrawTime(drawTime);
-		settings.setRounds(rounds);
+		settings.setMaxWins(maxWins);
 		settings.setRounds(rounds);
 		return settings;
 	}
