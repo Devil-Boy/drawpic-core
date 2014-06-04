@@ -19,7 +19,7 @@
 		scope="prototype">
 	</bean>
 	<bean name="emptyPacket04"
-		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04LobbyOption"
+		class="cse110team4.drawpic.drawpic_core.protocol.packet.serverbound.Packet04KickLobby"
 		scope="prototype">
 	</bean>
 	<bean name="emptyPacket05"
