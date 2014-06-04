@@ -7,7 +7,7 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 
-public class Pen extends Step {
+public class Pen extends Step implements Tool {
 	static final byte PEN_ID = 0x01;
 
 	private Color color;
