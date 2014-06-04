@@ -6,32 +6,32 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
-public class Packet10SetHost extends Packet {
+public class Packet10SetJudge extends Packet {
 	final static byte SET_HOST_ID = 0x10;
 	
-	private String host;
+	private String judge;
 	
-	public Packet10SetHost() {
+	public Packet10SetJudge() {
 		super(SET_HOST_ID);
 	}
 	
-	public Packet10SetHost(String host) {
+	public Packet10SetJudge(String judge) {
 		this();
 		
-		this.host = host;
+		this.judge = judge;
 	}
 	
-	public String getHost() {
-		return host;
+	public String getJudge() {
+		return judge;
 	}
 
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		host = reader.readString();
+		judge = reader.readString();
 	}
 
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
-		writer.writeString(host);
+		writer.writeString(judge);
 	}
 }
