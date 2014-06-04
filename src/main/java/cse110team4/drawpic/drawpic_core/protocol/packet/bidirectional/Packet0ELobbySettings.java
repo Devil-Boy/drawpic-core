@@ -1,6 +1,8 @@
 package cse110team4.drawpic.drawpic_core.protocol.packet.bidirectional;
 
+import cse110team4.drawpic.drawpic_core.CoreBeans;
 import cse110team4.drawpic.drawpic_core.player.LobbySettings;
+import cse110team4.drawpic.drawpic_core.player.LobbySettingsParser;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReadException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
@@ -38,8 +40,7 @@ public class Packet0ELobbySettings extends Packet {
 	}
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		// Not needed
-
+		settings = CoreBeans.getContext().getBean("lobbySettingsParser", LobbySettingsParser.class).fromStream(reader);
 	}
 
 	@Override

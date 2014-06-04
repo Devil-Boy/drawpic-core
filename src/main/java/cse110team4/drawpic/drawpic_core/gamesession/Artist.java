@@ -1,5 +1,7 @@
 package cse110team4.drawpic.drawpic_core.gamesession;
 
+import cse110team4.drawpic.drawpic_core.drawing.Canvas;
+
 /**
  * This represents an artist for a game round
  *

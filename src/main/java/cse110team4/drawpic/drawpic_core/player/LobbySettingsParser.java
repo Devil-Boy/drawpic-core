@@ -19,7 +19,7 @@ public class LobbySettingsParser {
 	 * @return A subclass of ILobbySettings depending on what was in the stream
 	 * @throws StreamReadException if there was a read error
 	 */
-	public static LobbySettings fromStream(StreamReader reader) throws StreamReadException {
+	public LobbySettings fromStream(StreamReader reader) throws StreamReadException {
 		// Get the class name
 		String type = reader.readString();
 		

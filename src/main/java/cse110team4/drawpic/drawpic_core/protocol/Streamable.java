@@ -5,7 +5,8 @@ package cse110team4.drawpic.drawpic_core.protocol;
  * This is based on Java's Serializable interface
  *
  * @author Devil Boy (Kervin Sam)
- *
+ * 
+ * @category Decorator Pattern
  */
 public interface Streamable {
 

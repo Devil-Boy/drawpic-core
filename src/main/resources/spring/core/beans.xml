@@ -40,13 +40,15 @@
 		scope="prototype">
 	</bean>
 	<bean id="lobbyParser"
-		class="cse110team4.drawpic.drawpic_core.player.LobbyParser">
+		class="cse110team4.drawpic.drawpic_core.player.LobbyParser"
+		scope="singleton">
 	</bean>
-	
+
 	<bean id="lobbySettingsParser"
-		class="cse110team4.drawpic.drawpic_core.player.LobbySettingsParser">
+		class="cse110team4.drawpic.drawpic_core.player.LobbySettingsParser"
+		scope="singleton">
 	</bean>
-	
+
 	<bean id="packetParser"
 		class="cse110team4.drawpic.drawpic_core.protocol.packet.PacketParser"
 		scope="singleton">
