@@ -7,12 +7,12 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
 
 public class Packet10SetJudge extends Packet {
-	final static byte SET_HOST_ID = 0x10;
+	final static byte SET_JUDGE_ID = 0x10;
 	
 	private String judge;
 	
 	public Packet10SetJudge() {
-		super(SET_HOST_ID);
+		super(SET_JUDGE_ID);
 	}
 	
 	public Packet10SetJudge(String judge) {
