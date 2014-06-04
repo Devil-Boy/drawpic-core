@@ -1,7 +1,10 @@
 package cse110team4.drawpic.drawpic_core.player;
 
 import static org.junit.Assert.*;
+
 import org.junit.Test;
+
+import cse110team4.drawpic.drawpic_core.player.NormalLobbySettings.JudgeSetting;
 
 public class TestNormalLobbySettings {
 	@Test
@@ -18,12 +21,27 @@ public class TestNormalLobbySettings {
         assertEquals("", 5, lob.getDrawTime());
        
         lob.setRounds(0);
-        assertEquals("", 5, lob.getRounds());
+        assertEquals("", 0, lob.getRounds());
        
         lob.setMaxWins(0);
-        assertEquals("", 3, lob.getMaxWins());
+        assertEquals("", 0, lob.getMaxWins());
        
         lob.setDrawTime(0);
-        assertEquals("", 30, lob.getDrawTime());
+        assertEquals("", 0, lob.getDrawTime());
+	}
+	
+	@Test
+	public void testJudge() {
+		NormalLobbySettings lob = new NormalLobbySettings();
+		
+		if(lob.getJudging() == null) {
+			//pass
+		} else {
+			fail();
+		}
+		
+		lob.setJudging(JudgeSetting.HOST_ONLY);
+		
+		assertEquals("", JudgeSetting.HOST_ONLY, lob.getJudging());
 	}
 }
