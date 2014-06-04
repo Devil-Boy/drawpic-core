@@ -13,4 +13,8 @@ public class Judge {
 	 * It should be 0 when no decision has yet been made or 1-3 if one has been made
 	 */
 	int decision;
+	
+	public Judge() {
+		
+	}
 }
