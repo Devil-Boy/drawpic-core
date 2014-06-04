@@ -22,15 +22,13 @@ public class Packet13SingleStep extends Packet {
 
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		// TODO Auto-generated method stub
-
+		step = Step.fromStream(reader);
 	}
 
 	@Override
 	public void writeBodyToStream(StreamWriter writer)
 			throws StreamWriteException {
-		//writer.wri
-
+		step.writeStepToStream(writer);
 	}
 
 	public Step getStep() {
