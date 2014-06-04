@@ -12,47 +12,24 @@ import cse110team4.drawpic.drawpic_core.protocol.packet.Packet;
  * @author Devil Boy (Kervin Sam)
  *
  */
-public class Packet04LobbyOption extends Packet {
+public class Packet04KickLobby extends Packet {
 	final static byte LOGIN_ID = 0x04;
-	
-	/**
-	 * This enum merely represents the selected option
-	 * 
-	 * @author Devil Boy (Kervin Sam)
-	 *
-	 */
-	public enum Option { 
-		CREATE,
-		JOIN
-	}
-	
-	private Option option;
 
 	/**
 	 * Constructor that doesn't set any initial values
 	 */
-	public Packet04LobbyOption() {
+	public Packet04KickLobby() {
 		super(LOGIN_ID);
 	}
 
-	/**
-	 * Constructs the packet with the given option
-	 * @param option
-	 */
-	public Packet04LobbyOption(Option option) {
-		this();
-		
-		this.option = option;
-	}
 	
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
-		// Write the option ID
-		writer.writeString(option.name());
+		//nothing
 	}
 
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		option = Option.valueOf(reader.readString());
+		//not needed - Kirk 2014
 	}
 }
