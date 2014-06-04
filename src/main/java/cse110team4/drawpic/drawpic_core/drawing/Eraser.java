@@ -5,7 +5,7 @@ import cse110team4.drawpic.drawpic_core.protocol.StreamReader;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriteException;
 import cse110team4.drawpic.drawpic_core.protocol.StreamWriter;
 
-public class Eraser extends Step {
+public class Eraser extends Step implements Tool {
 	static final byte ERASER_ID = 0x02;
 
 	private int size;
