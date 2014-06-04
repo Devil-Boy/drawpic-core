@@ -15,6 +15,14 @@ public class Packet12GamePhase extends Packet {
 		super(GAME_PHASE_ID);
 	}
 	
+	public String getPhase() {
+		return phase;
+	}
+
+	public void setPhase(String phase) {
+		this.phase = phase;
+	}
+
 	public Packet12GamePhase(String s) {
 		super(GAME_PHASE_ID);
 		
