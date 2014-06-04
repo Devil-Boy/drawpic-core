@@ -27,15 +27,11 @@ public class Packet0CLeaveLobby extends Packet {
 	
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		//Not needed
-
 	}
 
 	
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
-		//Not needed
-
 	}
 
 }

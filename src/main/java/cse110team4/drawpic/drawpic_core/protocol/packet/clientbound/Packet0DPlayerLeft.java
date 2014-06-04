@@ -18,7 +18,7 @@ public class Packet0DPlayerLeft extends Packet {
 
 	final static byte PLAYER_LEFT = 0x0D;
 	private String username;
-	
+
 	/**
 	 * Default arg constructor
 	 */
@@ -30,17 +30,23 @@ public class Packet0DPlayerLeft extends Packet {
 		super(PLAYER_LEFT);
 		this.username = username;
 	}
+	
+	/**
+	 * Gets the username of the player who left
+	 * @return A String username
+	 */
+	public String getUsername() {
+		return username;
+	}
 
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		// TODO Auto-generated method stub
-
+		username = reader.readString();
 	}
 
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
 		writer.writeString(username);
-
 	}
 
 }
