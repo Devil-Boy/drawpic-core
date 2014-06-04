@@ -40,14 +40,12 @@ public class Packet0BPlayerJoined extends Packet {
 	
 	@Override
 	public void readFromStream(StreamReader reader) throws StreamReadException {
-		// Not needed
-
+		username = reader.readString();
 	}
 
 	@Override
 	public void writeBodyToStream(StreamWriter writer) throws StreamWriteException {
 		writer.writeString(username);
-
 	}
 
 }
