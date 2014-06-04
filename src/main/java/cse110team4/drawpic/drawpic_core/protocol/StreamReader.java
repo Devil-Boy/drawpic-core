@@ -6,6 +6,7 @@ package cse110team4.drawpic.drawpic_core.protocol;
  *
  * @author Devil Boy (Kervin Sam)
  *
+ * @category Strategy Pattern
  */
 public interface StreamReader {
 

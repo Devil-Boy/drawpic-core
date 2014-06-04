@@ -116,4 +116,14 @@ public class NormalLobbySettings extends LobbySettings {
 		maxWins = reader.readInt();
 		drawTime = reader.readInt();
 	}
+
+	@Override
+	public LobbySettings clone() {
+		NormalLobbySettings settings = new NormalLobbySettings();
+		settings.setJudging(judging);
+		settings.setDrawTime(drawTime);
+		settings.setRounds(rounds);
+		settings.setRounds(rounds);
+		return settings;
+	}
 }
