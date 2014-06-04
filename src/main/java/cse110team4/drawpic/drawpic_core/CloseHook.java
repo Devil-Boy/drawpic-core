@@ -12,7 +12,7 @@ import java.util.List;
 public class CloseHook extends Thread {
 	private List<Runnable> hooks;
 	
-	private CloseHook() {
+	public CloseHook() {
 		hooks = new ArrayList<Runnable>();
 		
 		Runtime.getRuntime().addShutdownHook(this);
